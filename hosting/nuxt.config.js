@@ -9,12 +9,42 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - hogehoge',
-    title: 'hogehoge',
+    titleTemplate: '%s - しっぱ偉人',
+    title: 'しっぱ偉人',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '説明文がここに入る。' },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'しっぱ偉人'
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://shippaijinn.work'
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'しっぱ偉人'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'ここに説明文。'
+      },
+      {
+        hid: 'twitter:card',
+        property: 'twitter:card',
+        content: 'summary_large_image'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
