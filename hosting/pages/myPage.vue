@@ -72,18 +72,23 @@
           </v-btn>
         </v-card-actions>
       </v-card>
+      <v-failure></v-failure>
+      <v-profile></v-profile>
+      <v-quotations></v-quotations>
     </v-col>
   </v-row>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import VFailure from '~/components/myPage/Failure.vue'
+import VProfile from '~/components/myPage/Profile.vue'
+import VQuotations from '~/components/myPage/Quotations.vue'
 
 export default {
   components: {
-    Logo,
-    VuetifyLogo
+    VFailure,
+    VProfile,
+    VQuotations
   }
 }
 </script>
