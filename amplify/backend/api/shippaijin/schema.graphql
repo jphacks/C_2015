@@ -14,8 +14,6 @@ type Failure @model @searchable
   metoos: [Metoo] @connection(keyName: "byFailure", fields: ["id"])
   sorrys: [Sorry] @connection(keyName: "byFailure", fields: ["id"])
   nices: [Nice] @connection(keyName: "byFailure", fields: ["id"])
-  updatedAt: AWSDateTime
-  createdAt: AWSDateTime
 }
 
 type Saying @model @searchable
@@ -33,8 +31,6 @@ type Saying @model @searchable
   failureID: ID!
   failure: Failure @connection(fields: ["failureID"])
   likes: [Like] @connection(keyName: "bySaying", fields: ["id"])
-  updatedAt: AWSDateTime
-  createdAt: AWSDateTime
 }
 
 type Metoo @model
@@ -50,8 +46,6 @@ type Metoo @model
   owner: String
   failureID: ID!
   failure: Failure @connection(fields: ["failureID"])
-  updatedAt: AWSDateTime
-  createdAt: AWSDateTime
 }
 
 type Sorry @model
@@ -67,8 +61,6 @@ type Sorry @model
   owner: String
   failureID: ID!
   failure: Failure @connection(fields: ["failureID"])
-  updatedAt: AWSDateTime
-  createdAt: AWSDateTime
 }
 
 type Nice @model
@@ -84,8 +76,6 @@ type Nice @model
   owner: String
   failureID: ID!
   failure: Failure @connection(fields: ["failureID"])
-  updatedAt: AWSDateTime
-  createdAt: AWSDateTime
 }
 
 type Like @model
@@ -101,6 +91,4 @@ type Like @model
   owner: String
   sayingID: ID!
   saying: Saying @connection(fields: ["sayingID"])
-  updatedAt: AWSDateTime
-  createdAt: AWSDateTime
 }
