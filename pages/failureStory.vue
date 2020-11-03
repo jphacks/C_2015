@@ -56,6 +56,11 @@ export default {
       this.title = ''
       this.content = ''
     }
+  },
+  head () {
+    return {
+      title: '失敗談...'
+    }
   }
 }
 </script>
