@@ -1,5 +1,106 @@
-type Todo @model {
+type Failure @model @searchable
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: public, operations: [read] }
+    ]
+  )
+{
   id: ID!
-  name: String!
-  description: String
+  title: String!
+  content: String!
+  owner: String
+  sayings: [Saying] @connection(keyName: "byFailure", fields: ["id"])
+  metoos: [Metoo] @connection(keyName: "byFailure", fields: ["id"])
+  sorrys: [Sorry] @connection(keyName: "byFailure", fields: ["id"])
+  nices: [Nice] @connection(keyName: "byFailure", fields: ["id"])
+  updatedAt: AWSDateTime
+  createdAt: AWSDateTime
+}
+
+type Saying @model @searchable
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: public, operations: [read] }
+    ]
+  )
+  @key(name: "byFailure", fields: ["failureID", "content"])
+{
+  id: ID!
+  content: String!
+  owner: String
+  failureID: ID!
+  failure: Failure @connection(fields: ["failureID"])
+  likes: [Like] @connection(keyName: "bySaying", fields: ["id"])
+  updatedAt: AWSDateTime
+  createdAt: AWSDateTime
+}
+
+type Metoo @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: public, operations: [read] }
+    ]
+  )
+  @key(name: "byFailure", fields: ["failureID"])
+{
+  id: ID!
+  owner: String
+  failureID: ID!
+  failure: Failure @connection(fields: ["failureID"])
+  updatedAt: AWSDateTime
+  createdAt: AWSDateTime
+}
+
+type Sorry @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: public, operations: [read] }
+    ]
+  )
+  @key(name: "byFailure", fields: ["failureID"])
+{
+  id: ID!
+  owner: String
+  failureID: ID!
+  failure: Failure @connection(fields: ["failureID"])
+  updatedAt: AWSDateTime
+  createdAt: AWSDateTime
+}
+
+type Nice @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: public, operations: [read] }
+    ]
+  )
+  @key(name: "byFailure", fields: ["failureID"])
+{
+  id: ID!
+  owner: String
+  failureID: ID!
+  failure: Failure @connection(fields: ["failureID"])
+  updatedAt: AWSDateTime
+  createdAt: AWSDateTime
+}
+
+type Like @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: public, operations: [read] }
+    ]
+  )
+  @key(name: "bySaying", fields: ["sayingID"])
+{
+  id: ID!
+  owner: String
+  sayingID: ID!
+  saying: Saying @connection(fields: ["sayingID"])
+  updatedAt: AWSDateTime
+  createdAt: AWSDateTime
 }
