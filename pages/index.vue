@@ -1,12 +1,14 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="12">
+    <v-col
+      cols="12"
+      v-for="failure in failures"
+      :key="failure.id"
+    >
       <failure-card
-        name="hoge"
-        content="hogehoge"
+        :failure="failure"
       />
     </v-col>
-    {{ failures }}
   </v-row>
 </template>
 
@@ -33,6 +35,11 @@ export default {
         query: listFailures
       })
       this.failures = failures.data.listFailures.items
+    }
+  },
+  head () {
+    return {
+      title: 'Home'
     }
   }
 }

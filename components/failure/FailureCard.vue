@@ -1,9 +1,13 @@
 <template>
   <v-card>
-    <v-card-title>{{ title }}</v-card-title>
+    <v-card-title>{{ failure.title }}</v-card-title>
     <v-card-text>
-      {{ content }}
+      {{ failure.content }}
     </v-card-text>
+    <v-card-actions>
+      <v-btn @click="showSaying">名言一覧</v-btn>
+      <v-btn @click="createSaying">名言を送る</v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 
@@ -11,12 +15,8 @@
 export default {
   name: 'FailureCard',
   props: {
-    title: {
-      type: String,
-      required: true
-    },
-    content: {
-      type: String,
+    failure: {
+      type: Object,
       required: true
     }
   }
