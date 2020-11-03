@@ -11,9 +11,9 @@
             マイページ
           </v-card-title>
         </v-card>
-        <v-failure></v-failure>
-        <v-profile></v-profile>
-        <v-quotations></v-quotations>
+        <v-failure />
+        <v-profile />
+        <v-quotations />
       </v-col>
     </v-row>
   </amplify-authenticator>

@@ -31,8 +31,8 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
-      <v-spacer></v-spacer>
-      <v-autocomplete></v-autocomplete>
+      <v-spacer />
+      <v-autocomplete />
     </v-app-bar>
     <v-main>
       <v-container>

@@ -1,30 +1,32 @@
 <template>
   <amplify-authenticator>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          失敗談投稿フォーム
-        </v-card-title>
-        <v-card-text>
-          hogehoge
-        </v-card-text>
-      </v-card>
-    </v-col>
-  </v-row>
-  <v-row>
-    <v-col>
-      <v-card>
-        <v-text-field v-model="title" label="Title"></v-text-field>
-        <v-text-field v-model="content" label="Content"></v-text-field>
-      </v-card>
-      <v-btn @click="createFailure">失敗談を投稿する</v-btn>
-    </v-col>
-  </v-row>
+    <v-row justify="center" align="center">
+      <v-col cols="12" sm="8" md="6">
+        <div class="text-center">
+          <logo />
+          <vuetify-logo />
+        </div>
+        <v-card>
+          <v-card-title class="headline">
+            失敗談投稿フォーム
+          </v-card-title>
+          <v-card-text>
+            hogehoge
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-card>
+          <v-text-field v-model="title" label="Title" />
+          <v-text-field v-model="content" label="Content" />
+        </v-card>
+        <v-btn @click="createFailure">
+          失敗談を投稿する
+        </v-btn>
+      </v-col>
+    </v-row>
   </amplify-authenticator>
 </template>
 
