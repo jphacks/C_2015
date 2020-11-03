@@ -46,7 +46,11 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+
+    ['nuxt-sass-resources-loader', [
+      '~/assets/variables.scss',
+    ]],
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -75,3 +79,11 @@ export default {
   build: {
   }
 }
+
+module.exports = {
+  modules: [
+    ['nuxt-sass-resources-loader', [
+      '~/assets/variables.scss',
+    ]],
+  ],
+};
