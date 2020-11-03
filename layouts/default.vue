@@ -85,3 +85,16 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.v-app-bar.v-toolbar,
+.v-footer{
+  background-color: $orangered !important;
+}
+.v-navigation-drawer{
+  background-color: $yellowbeige;
+  .v-icon{
+    color: $deepred;
+}
+}
+</style>
