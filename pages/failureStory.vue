@@ -22,7 +22,7 @@
         <v-text-field v-model="title" label="Title"></v-text-field>
         <v-text-field v-model="content" label="Content"></v-text-field>
       </v-card>
-      <v-btn @click="createFailureMethod()">失敗談を投稿する</v-btn>
+      <v-btn @click="createFailure">失敗談を投稿する</v-btn>
     </v-col>
   </v-row>
   </amplify-authenticator>
@@ -42,9 +42,9 @@ export default {
     }
   },
   methods: {
-    async createFailureMethod () {
+    async createFailure () {
       const { title, content } = this
-      if (!title || content) { return false }
+      if (!title || !content) { return false }
       const failure = {
         title,
         content

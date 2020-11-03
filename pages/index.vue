@@ -24,6 +24,9 @@ export default {
       failures: []
     }
   },
+  created () {
+    this.getFailures()
+  },
   methods: {
     async getFailures () {
       const failures = await API.graphql({
