@@ -11,8 +11,10 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
+    "@aws-amplify/ui-vue": "^0.2.26",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/pwa": "^3.0.2",
+    "aws-amplify": "^3.3.7",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6"
   },
