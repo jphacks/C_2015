@@ -82,6 +82,15 @@ export default {
     }
   },
 
+  pwa: {
+    manifest: {
+      name: 'しっぱ偉人',
+      short_name: 'しっぱ偉人',
+      description: 'しっぱ偉人',
+      lang: 'ja',
+    }
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }
