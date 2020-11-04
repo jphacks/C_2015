@@ -928,3 +928,51 @@ export const deleteLike = /* GraphQL */ `
     }
   }
 `;
+export const createOnesingle = /* GraphQL */ `
+  mutation CreateOnesingle(
+    $input: CreateOnesingleInput!
+    $condition: ModelOnesingleConditionInput
+  ) {
+    createOnesingle(input: $input, condition: $condition) {
+      id
+      owner
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateOnesingle = /* GraphQL */ `
+  mutation UpdateOnesingle(
+    $input: UpdateOnesingleInput!
+    $condition: ModelOnesingleConditionInput
+  ) {
+    updateOnesingle(input: $input, condition: $condition) {
+      id
+      owner
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteOnesingle = /* GraphQL */ `
+  mutation DeleteOnesingle(
+    $input: DeleteOnesingleInput!
+    $condition: ModelOnesingleConditionInput
+  ) {
+    deleteOnesingle(input: $input, condition: $condition) {
+      id
+      owner
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
