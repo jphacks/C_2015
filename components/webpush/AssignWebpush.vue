@@ -2,7 +2,9 @@
   <div>
     <v-btn
       @click="activateWebpush"
-    >プッシュ通知を有効化する</v-btn>
+    >
+      プッシュ通知を有効化する
+    </v-btn>
   </div>
 </template>
 
@@ -20,12 +22,11 @@ export default {
           }
         })
         // 通知許可を求める。
-        this.$OneSignal.showNativePrompt()　
+        this.$OneSignal.showNativePrompt()
       })
     },
     createOnesingle (id) {
       // ここにOnesingleモデルにデータ突っ込む処理。
-      console.log(id)
     }
   }
 }

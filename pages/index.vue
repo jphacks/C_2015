@@ -1,9 +1,9 @@
 <template>
   <v-row justify="center" align="center">
     <v-col
-      cols="12"
       v-for="failure in failures"
       :key="failure.id"
+      cols="12"
     >
       <failure-card
         :failure="failure"

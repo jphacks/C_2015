@@ -9,7 +9,7 @@
       </v-col>
       <v-col cols="12">
         <div>
-          <v-text-field v-model="content" label="Body"></v-text-field>
+          <v-text-field v-model="content" label="Body" />
         </div>
       </v-col>
     </v-row>
