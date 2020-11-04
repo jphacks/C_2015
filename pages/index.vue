@@ -9,17 +9,20 @@
         :failure="failure"
       />
     </v-col>
+    <assign-webpush />
   </v-row>
 </template>
 
 <script>
 import FailureCard from '@/components/failure/FailureCard.vue'
+import AssignWebpush from '@/components/webpush/AssignWebpush.vue'
 import { API } from 'aws-amplify'
 import { listFailures } from '~/graphql/queries'
 
 export default {
   components: {
-    FailureCard
+    FailureCard,
+    AssignWebpush
   },
   data () {
     return {
