@@ -38,7 +38,8 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/style-resources'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -47,12 +48,14 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/onesignal',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
-
-    ['nuxt-sass-resources-loader', [
-      '~/assets/variables.scss',
-    ]],
+    '@nuxtjs/pwa'
   ],
+
+  styleResources: {
+    scss: [
+      './assets/variables.scss'
+    ]
+  },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},

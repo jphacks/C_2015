@@ -1,44 +1,15 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col
-      v-for="failure in failures"
-      :key="failure.id"
-      cols="12"
-    >
-      <failure-card
-        :failure="failure"
-      />
-    </v-col>
-    <assign-webpush />
-  </v-row>
+  <div>
+    <FailureList />
+  </div>
 </template>
 
 <script>
-import FailureCard from '@/components/failure/FailureCard.vue'
-import AssignWebpush from '@/components/webpush/AssignWebpush.vue'
-import { API } from 'aws-amplify'
-import { listFailures } from '~/graphql/queries'
+import FailureList from '@/components/failure/FailureList'
 
 export default {
   components: {
-    FailureCard,
-    AssignWebpush
-  },
-  data () {
-    return {
-      failures: []
-    }
-  },
-  created () {
-    this.getFailures()
-  },
-  methods: {
-    async getFailures () {
-      const failures = await API.graphql({
-        query: listFailures
-      })
-      this.failures = failures.data.listFailures.items
-    }
+    FailureList
   },
   head () {
     return {
