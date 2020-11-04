@@ -45,6 +45,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/onesignal',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
 
@@ -72,6 +73,29 @@ export default {
           success: colors.green.accent3
         }
       }
+    }
+  },
+
+  oneSignal: {
+    init: {
+      // test is 8f1359a2-c0ca-4fe9-9463-612a42b7d38f
+      // prod is 0e1b6663-04df-4018-8e54-009c0450bd93
+      appId: '0e1b6663-04df-4018-8e54-009c0450bd93',
+      safari_web_id: 'web.onesignal.auto.27be598e-7a22-4ed6-a01a-10378439b214',
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+        title: '通知許可ありがとうございます！',
+        message: 'あなたの失敗談に偉人が名言を残したら、お知らせします'
+      }
+    }
+  },
+
+  pwa: {
+    manifest: {
+      name: 'しっぱ偉人',
+      short_name: 'しっぱ偉人',
+      description: 'しっぱ偉人',
+      lang: 'ja',
     }
   },
 

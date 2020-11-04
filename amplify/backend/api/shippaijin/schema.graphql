@@ -87,3 +87,13 @@ type Like @model
   sayingID: ID!
   saying: Saying @connection(fields: ["sayingID"])
 }
+type Onesingle @model
+  @auth(
+    rules: [
+      { allow: owner }
+    ]
+  )
+{
+  id: ID!
+  owner: String
+}

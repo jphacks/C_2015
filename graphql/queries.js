@@ -1,6 +1,67 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const syncOnesingles = /* GraphQL */ `
+  query SyncOnesingles(
+    $filter: ModelOnesingleFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncOnesingles(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        owner
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getOnesingle = /* GraphQL */ `
+  query GetOnesingle($id: ID!) {
+    getOnesingle(id: $id) {
+      id
+      owner
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listOnesingles = /* GraphQL */ `
+  query ListOnesingles(
+    $filter: ModelOnesingleFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listOnesingles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        owner
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
 export const listFailures = /* GraphQL */ `
   query ListFailures(
     $filter: ModelFailureFilterInput
