@@ -72,6 +72,16 @@ export default {
     }
   },
 
+  onesignal: {
+    init: {
+      appId: '0e1b6663-04df-4018-8e54-009c0450bd93',
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+        disable: true
+      }
+    }
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }
