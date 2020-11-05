@@ -21,6 +21,7 @@
         <v-card-text>
           {{ targetFailure.content }}
         </v-card-text>
+        {{ targetFailure }}
       </v-card>
     </v-dialog>
     <v-dialog
@@ -55,7 +56,7 @@
 <script>
 import { API } from 'aws-amplify'
 import FailureCard from '@/components/failure/FailureCard'
-import { listFailures } from '~/graphql/queries'
+import { listFailures } from '~/graphql/custumQueries'
 import { createSaying } from '~/graphql/mutations'
 
 export default {

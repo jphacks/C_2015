@@ -22,7 +22,7 @@ type Saying @model @searchable
       { allow: public, operations: [read] }
     ]
   )
-  @key(name: "byFailure", fields: ["failureID", "content"])
+  @key(name: "byFailure", fields: ["failureID", "content"], queryField: "byFailure")
 {
   id: ID!
   content: String!
@@ -38,7 +38,7 @@ type Metoo @model
       { allow: public, operations: [read] }
     ]
   )
-  @key(name: "byFailure", fields: ["failureID"])
+  @key(name: "byFailure", fields: ["failureID"], queryField: "byFailure")
 {
   id: ID!
   owner: String
@@ -52,7 +52,7 @@ type Sorry @model
       { allow: public, operations: [read] }
     ]
   )
-  @key(name: "byFailure", fields: ["failureID"])
+  @key(name: "byFailure", fields: ["failureID"], queryField: "byFailure")
 {
   id: ID!
   owner: String
@@ -66,7 +66,7 @@ type Nice @model
       { allow: public, operations: [read] }
     ]
   )
-  @key(name: "byFailure", fields: ["failureID"])
+  @key(name: "byFailure", fields: ["failureID"], queryField: "byFailure")
 {
   id: ID!
   owner: String
@@ -80,7 +80,7 @@ type Like @model
       { allow: public, operations: [read] }
     ]
   )
-  @key(name: "bySaying", fields: ["sayingID"])
+  @key(name: "bySaying", fields: ["sayingID"], queryField: "bySaying")
 {
   id: ID!
   owner: String
