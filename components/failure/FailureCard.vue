@@ -5,7 +5,7 @@
       {{ failure.content }}
     </v-card-text>
     <v-card-actions>
-      <v-btn @click="showSaying">
+      <v-btn @click="showSayings">
         名言一覧
       </v-btn>
       <v-btn @click="createSaying">
@@ -22,6 +22,14 @@ export default {
     failure: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    showSayings () {
+      this.$emit('showSayings', this.failure)
+    },
+    createSaying () {
+      this.$emit('showSendSaying', this.failure)
     }
   }
 }
