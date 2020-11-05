@@ -47,11 +47,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/onesignal',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
-
-    ['nuxt-sass-resources-loader', [
-      '~/assets/variables.scss',
-    ]],
+    '@nuxtjs/pwa'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

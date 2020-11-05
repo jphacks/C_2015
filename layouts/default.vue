@@ -86,6 +86,7 @@ export default {
 }
 </script>
 
+<!--
 <style lang="scss" scoped>
 .v-app-bar.v-toolbar,
 .v-footer{
@@ -98,3 +99,4 @@ export default {
 }
 }
 </style>
+-->

@@ -1,0 +1,113 @@
+<template>
+  <v-row justify="center" align="center">
+    <v-col
+      v-for="failure in failures"
+      :key="failure.id"
+      cols="12"
+    >
+      <FailureCard
+        :failure="failure"
+        @showSayings="openSayingsDialog"
+        @showSendSaying="openSendSayingDialog"
+      />
+    </v-col>
+    <v-dialog
+      v-model="showSayingsDialog"
+    >
+      <v-card>
+        <v-card-title>
+          「{{ targetFailure.title }}」に送られた名言
+        </v-card-title>
+        <v-card-text>
+          {{ targetFailure.content }}
+        </v-card-text>
+        {{ targetFailure }}
+      </v-card>
+    </v-dialog>
+    <v-dialog
+      v-model="showSendSayingDialog"
+    >
+      <v-card>
+        <v-card-title>
+          「{{ targetFailure.title }}」へ名言を送ろう
+        </v-card-title>
+        <v-card-text>
+          {{ targetFailure.content }}
+        </v-card-text>
+        <v-card-actions>
+          <v-text-field
+            v-model="createdSaying"
+            label="名言"
+            :rules="[rulesCreateSaying.required]"
+            placeholder="ここのテキスト募集"
+          >本文</v-text-field>
+        </v-card-actions>
+        <v-card-actions>
+          <v-btn
+            @click="createSaying"
+          >名言を送る</v-btn>
+        </v-card-actions>
+        {{ targetFailure }}
+      </v-card>
+    </v-dialog>
+  </v-row>
+</template>
+
+<script>
+import { API } from 'aws-amplify'
+import FailureCard from '@/components/failure/FailureCard'
+import { listFailures } from '~/graphql/custumQueries'
+import { createSaying } from '~/graphql/mutations'
+
+export default {
+  name: 'FailureList',
+  components: {
+    FailureCard
+  },
+  data () {
+    return {
+      failures: [],
+      showSayingsDialog: false,
+      showSendSayingDialog: false,
+      targetFailure: {},
+      createdSaying: '',
+      rulesCreateSaying: {
+        required: value => !!value || '名言を残してね'
+      }
+    }
+  },
+  created () {
+    this.getFailures()
+  },
+  methods: {
+    async getFailures () {
+      const failures = await API.graphql({
+        query: listFailures
+      })
+      this.failures = failures.data.listFailures.items
+    },
+    openSayingsDialog (failure) {
+      this.targetFailure = failure
+      this.showSayingsDialog = true
+    },
+    openSendSayingDialog (failure) {
+      this.targetFailure = failure
+      this.showSendSayingDialog = true
+    },
+    async createSaying () {
+      const { createdSaying } = this
+      if (!createdSaying) { return }
+      const saying = {
+        content: createdSaying,
+        failureID: this.targetFailure.id
+      }
+      await API.graphql({
+        query: createSaying,
+        variables: { input: saying }
+      })
+      this.createdSaying = ''
+      this.showSendSayingDialog = false
+    }
+  }
+}
+</script>
