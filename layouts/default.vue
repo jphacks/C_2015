@@ -99,6 +99,6 @@ export default {
   background-color: #f4dca5;
 }
 .v-navigation-drawer .v-icon{
-    color: #9d1d22;
+    color: #7e0f14;
 }
 </style>

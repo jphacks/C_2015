@@ -16,7 +16,7 @@ export default {
 
 <style scoped>
 .v-card{
-  background-color: #9d1d22;
+  background-color: #7e0f14;
   padding: 1rem;
   border-radius: 20px;
 }
