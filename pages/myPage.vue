@@ -5,6 +5,11 @@
         <v-profile :username=username />
         <v-quotations />
       </v-col>
+      <div class="bar">
+        <v-icon>mdi-feather</v-icon>
+        <span>これまでに投稿した失敗談</span>
+        <v-icon>mdi-feather</v-icon>
+      </div>
       <v-col
       cols="12"
       v-for="failure in failures"
@@ -12,6 +17,11 @@
       >
         <v-failure :failure="failure" />
       </v-col>
+      <div class="bar">
+        <v-icon>mdi-feather</v-icon>
+        <span>これまでに送った名言</span>
+        <v-icon>mdi-feather</v-icon>
+      </div>
       <v-col
       cols="12"
       v-for="saying in sayings"
@@ -68,3 +78,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+</style>
