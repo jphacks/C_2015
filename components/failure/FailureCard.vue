@@ -2,7 +2,9 @@
   <v-card>
     <v-row>
       <v-col cols="2">
-        {{ failure.owner }}
+        <div class="username">
+          <span>{{ failure.owner }}</span>
+        </div>
       </v-col>
       <v-col cols="10">
         <v-card-title class="title">{{ failure.title }}</v-card-title>
@@ -75,5 +77,17 @@ export default {
   margin-right: 30%;
 }
 .actions{
+}
+.username{
+  height: 100%;
+  position: relative;
+}
+.username span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  padding: .5rem 20%;
 }
 </style>
