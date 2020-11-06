@@ -10,13 +10,7 @@
         <span>これまでに投稿した失敗談</span>
         <v-icon color="white">mdi-feather</v-icon>
       </div>
-      <v-col
-      cols="10"
-      v-for="failure in failures"
-      :key="failure.id"
-      >
-        <v-failure :failure="failure" />
-      </v-col>
+      <failure-list :failures="failures" />
       <div class="bar">
         <v-icon color="white">mdi-feather</v-icon>
         <span>これまでに送った名言</span>
@@ -35,14 +29,14 @@
 
 <script>
 import { API, Auth } from 'aws-amplify'
+import FailureList from '@/components/myPage/FailureList'
 import { listFailures, listSayings } from '~/graphql/custumQueries'
-import VFailure from '~/components/myPage/Failure.vue'
 import VProfile from '~/components/myPage/Profile.vue'
 import VSaying from '~/components/myPage/Saying.vue'
 
 export default {
   components: {
-    VFailure,
+    FailureList,
     VProfile,
     VSaying
   },
