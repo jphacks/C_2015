@@ -1,43 +1,12 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const syncOnesingles = /* GraphQL */ `
-  query SyncOnesingles(
-    $filter: ModelOnesingleFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncOnesingles(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        owner
-        onesignalId
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
 export const getOnesingle = /* GraphQL */ `
   query GetOnesingle($id: ID!) {
     getOnesingle(id: $id) {
       id
       owner
       onesignalId
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -54,14 +23,10 @@ export const listOnesingles = /* GraphQL */ `
         id
         owner
         onesignalId
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
-      startedAt
     }
   }
 `;
@@ -77,30 +42,22 @@ export const listFailures = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
       nextToken
-      startedAt
     }
   }
 `;
@@ -111,9 +68,6 @@ export const getFailure = /* GraphQL */ `
       title
       content
       owner
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       sayings {
@@ -122,56 +76,40 @@ export const getFailure = /* GraphQL */ `
           content
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       metoos {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       sorrys {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       nices {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
     }
   }
@@ -196,75 +134,23 @@ export const searchFailures = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
       nextToken
       total
-    }
-  }
-`;
-export const syncFailures = /* GraphQL */ `
-  query SyncFailures(
-    $filter: ModelFailureFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncFailures(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        title
-        content
-        owner
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        sayings {
-          nextToken
-          startedAt
-        }
-        metoos {
-          nextToken
-          startedAt
-        }
-        sorrys {
-          nextToken
-          startedAt
-        }
-        nices {
-          nextToken
-          startedAt
-        }
-      }
-      nextToken
-      startedAt
     }
   }
 `;
@@ -280,9 +166,6 @@ export const listSayings = /* GraphQL */ `
         content
         owner
         failureID
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         failure {
@@ -290,19 +173,14 @@ export const listSayings = /* GraphQL */ `
           title
           content
           owner
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         likes {
           nextToken
-          startedAt
         }
       }
       nextToken
-      startedAt
     }
   }
 `;
@@ -313,9 +191,6 @@ export const getSaying = /* GraphQL */ `
       content
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -323,26 +198,19 @@ export const getSaying = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
       likes {
@@ -350,14 +218,10 @@ export const getSaying = /* GraphQL */ `
           id
           owner
           sayingID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
     }
   }
@@ -382,9 +246,6 @@ export const searchSayings = /* GraphQL */ `
         content
         owner
         failureID
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         failure {
@@ -392,63 +253,15 @@ export const searchSayings = /* GraphQL */ `
           title
           content
           owner
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         likes {
           nextToken
-          startedAt
         }
       }
       nextToken
       total
-    }
-  }
-`;
-export const syncSayings = /* GraphQL */ `
-  query SyncSayings(
-    $filter: ModelSayingFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncSayings(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        content
-        owner
-        failureID
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        failure {
-          id
-          title
-          content
-          owner
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        likes {
-          nextToken
-          startedAt
-        }
-      }
-      nextToken
-      startedAt
     }
   }
 `;
@@ -458,9 +271,6 @@ export const getMetoo = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -468,26 +278,19 @@ export const getMetoo = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
     }
@@ -504,9 +307,6 @@ export const listMetoos = /* GraphQL */ `
         id
         owner
         failureID
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         failure {
@@ -514,54 +314,11 @@ export const listMetoos = /* GraphQL */ `
           title
           content
           owner
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
       }
       nextToken
-      startedAt
-    }
-  }
-`;
-export const syncMetoos = /* GraphQL */ `
-  query SyncMetoos(
-    $filter: ModelMetooFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncMetoos(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        owner
-        failureID
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        failure {
-          id
-          title
-          content
-          owner
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-      }
-      nextToken
-      startedAt
     }
   }
 `;
@@ -571,9 +328,6 @@ export const getSorry = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -581,26 +335,19 @@ export const getSorry = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
     }
@@ -617,9 +364,6 @@ export const listSorrys = /* GraphQL */ `
         id
         owner
         failureID
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         failure {
@@ -627,54 +371,11 @@ export const listSorrys = /* GraphQL */ `
           title
           content
           owner
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
       }
       nextToken
-      startedAt
-    }
-  }
-`;
-export const syncSorries = /* GraphQL */ `
-  query SyncSorries(
-    $filter: ModelSorryFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncSorries(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        owner
-        failureID
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        failure {
-          id
-          title
-          content
-          owner
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-      }
-      nextToken
-      startedAt
     }
   }
 `;
@@ -684,9 +385,6 @@ export const getNice = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -694,26 +392,19 @@ export const getNice = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
     }
@@ -730,9 +421,6 @@ export const listNices = /* GraphQL */ `
         id
         owner
         failureID
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         failure {
@@ -740,54 +428,11 @@ export const listNices = /* GraphQL */ `
           title
           content
           owner
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
       }
       nextToken
-      startedAt
-    }
-  }
-`;
-export const syncNices = /* GraphQL */ `
-  query SyncNices(
-    $filter: ModelNiceFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncNices(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        owner
-        failureID
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        failure {
-          id
-          title
-          content
-          owner
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-      }
-      nextToken
-      startedAt
     }
   }
 `;
@@ -797,9 +442,6 @@ export const getLike = /* GraphQL */ `
       id
       owner
       sayingID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       saying {
@@ -807,9 +449,6 @@ export const getLike = /* GraphQL */ `
         content
         owner
         failureID
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         failure {
@@ -817,15 +456,11 @@ export const getLike = /* GraphQL */ `
           title
           content
           owner
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         likes {
           nextToken
-          startedAt
         }
       }
     }
@@ -842,9 +477,6 @@ export const listLikes = /* GraphQL */ `
         id
         owner
         sayingID
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         saying {
@@ -852,54 +484,11 @@ export const listLikes = /* GraphQL */ `
           content
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
       }
       nextToken
-      startedAt
-    }
-  }
-`;
-export const syncLikes = /* GraphQL */ `
-  query SyncLikes(
-    $filter: ModelLikeFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncLikes(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        owner
-        sayingID
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        saying {
-          id
-          content
-          owner
-          failureID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-      }
-      nextToken
-      startedAt
     }
   }
 `;

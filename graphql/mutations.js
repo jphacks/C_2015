@@ -11,9 +11,6 @@ export const createFailure = /* GraphQL */ `
       title
       content
       owner
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       sayings {
@@ -22,56 +19,40 @@ export const createFailure = /* GraphQL */ `
           content
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       metoos {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       sorrys {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       nices {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
     }
   }
@@ -86,9 +67,6 @@ export const updateFailure = /* GraphQL */ `
       title
       content
       owner
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       sayings {
@@ -97,56 +75,40 @@ export const updateFailure = /* GraphQL */ `
           content
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       metoos {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       sorrys {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       nices {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
     }
   }
@@ -161,9 +123,6 @@ export const deleteFailure = /* GraphQL */ `
       title
       content
       owner
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       sayings {
@@ -172,56 +131,40 @@ export const deleteFailure = /* GraphQL */ `
           content
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       metoos {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       sorrys {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       nices {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
     }
   }
@@ -236,9 +179,6 @@ export const createSaying = /* GraphQL */ `
       content
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -246,26 +186,19 @@ export const createSaying = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
       likes {
@@ -273,14 +206,10 @@ export const createSaying = /* GraphQL */ `
           id
           owner
           sayingID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
     }
   }
@@ -295,9 +224,6 @@ export const updateSaying = /* GraphQL */ `
       content
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -305,26 +231,19 @@ export const updateSaying = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
       likes {
@@ -332,14 +251,10 @@ export const updateSaying = /* GraphQL */ `
           id
           owner
           sayingID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
     }
   }
@@ -354,9 +269,6 @@ export const deleteSaying = /* GraphQL */ `
       content
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -364,26 +276,19 @@ export const deleteSaying = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
       likes {
@@ -391,14 +296,10 @@ export const deleteSaying = /* GraphQL */ `
           id
           owner
           sayingID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
     }
   }
@@ -412,9 +313,6 @@ export const createMetoo = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -422,26 +320,19 @@ export const createMetoo = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
     }
@@ -456,9 +347,6 @@ export const updateMetoo = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -466,26 +354,19 @@ export const updateMetoo = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
     }
@@ -500,9 +381,6 @@ export const deleteMetoo = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -510,26 +388,19 @@ export const deleteMetoo = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
     }
@@ -544,9 +415,6 @@ export const createSorry = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -554,26 +422,19 @@ export const createSorry = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
     }
@@ -588,9 +449,6 @@ export const updateSorry = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -598,26 +456,19 @@ export const updateSorry = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
     }
@@ -632,9 +483,6 @@ export const deleteSorry = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -642,26 +490,19 @@ export const deleteSorry = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
     }
@@ -676,9 +517,6 @@ export const createNice = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -686,26 +524,19 @@ export const createNice = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
     }
@@ -720,9 +551,6 @@ export const updateNice = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -730,26 +558,19 @@ export const updateNice = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
     }
@@ -764,9 +585,6 @@ export const deleteNice = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       failure {
@@ -774,26 +592,19 @@ export const deleteNice = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
       }
     }
@@ -808,9 +619,6 @@ export const createLike = /* GraphQL */ `
       id
       owner
       sayingID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       saying {
@@ -818,9 +626,6 @@ export const createLike = /* GraphQL */ `
         content
         owner
         failureID
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         failure {
@@ -828,15 +633,11 @@ export const createLike = /* GraphQL */ `
           title
           content
           owner
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         likes {
           nextToken
-          startedAt
         }
       }
     }
@@ -851,9 +652,6 @@ export const updateLike = /* GraphQL */ `
       id
       owner
       sayingID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       saying {
@@ -861,9 +659,6 @@ export const updateLike = /* GraphQL */ `
         content
         owner
         failureID
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         failure {
@@ -871,15 +666,11 @@ export const updateLike = /* GraphQL */ `
           title
           content
           owner
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         likes {
           nextToken
-          startedAt
         }
       }
     }
@@ -894,9 +685,6 @@ export const deleteLike = /* GraphQL */ `
       id
       owner
       sayingID
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       saying {
@@ -904,9 +692,6 @@ export const deleteLike = /* GraphQL */ `
         content
         owner
         failureID
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         failure {
@@ -914,15 +699,11 @@ export const deleteLike = /* GraphQL */ `
           title
           content
           owner
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         likes {
           nextToken
-          startedAt
         }
       }
     }
@@ -937,9 +718,6 @@ export const createOnesingle = /* GraphQL */ `
       id
       owner
       onesignalId
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -954,9 +732,6 @@ export const updateOnesingle = /* GraphQL */ `
       id
       owner
       onesignalId
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -971,9 +746,6 @@ export const deleteOnesingle = /* GraphQL */ `
       id
       owner
       onesignalId
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
