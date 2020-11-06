@@ -936,6 +936,7 @@ export const createOnesingle = /* GraphQL */ `
     createOnesingle(input: $input, condition: $condition) {
       id
       owner
+      onesignalId
       _version
       _deleted
       _lastChangedAt
@@ -952,6 +953,7 @@ export const updateOnesingle = /* GraphQL */ `
     updateOnesingle(input: $input, condition: $condition) {
       id
       owner
+      onesignalId
       _version
       _deleted
       _lastChangedAt
@@ -968,6 +970,7 @@ export const deleteOnesingle = /* GraphQL */ `
     deleteOnesingle(input: $input, condition: $condition) {
       id
       owner
+      onesignalId
       _version
       _deleted
       _lastChangedAt

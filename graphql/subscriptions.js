@@ -6,6 +6,7 @@ export const onCreateOnesingle = /* GraphQL */ `
     onCreateOnesingle(owner: $owner) {
       id
       owner
+      onesignalId
       _version
       _deleted
       _lastChangedAt
@@ -19,6 +20,7 @@ export const onUpdateOnesingle = /* GraphQL */ `
     onUpdateOnesingle(owner: $owner) {
       id
       owner
+      onesignalId
       _version
       _deleted
       _lastChangedAt
@@ -32,6 +34,7 @@ export const onDeleteOnesingle = /* GraphQL */ `
     onDeleteOnesingle(owner: $owner) {
       id
       owner
+      onesignalId
       _version
       _deleted
       _lastChangedAt
