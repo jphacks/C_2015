@@ -39,61 +39,150 @@
         </v-radio-group>
       </v-col>
     </v-row>
-    <Failurelist
-      v-if="searchResults.length !== 0 && targetOfSearch === 'failure'"
-      :failures="searchResults"
-    />
     <v-row
-      v-if="searchResults.length !== 0 && targetOfSearch === 'failure'"
+      no-gutters
     >
       <v-col
-        v-for="saying in searchResults"
-        :key="saying.id"
+        justify="center"
+        align="center"
       >
-        <v-card>
-          {{ saying.id }}
-        </v-card>
+        <v-progress-circular
+          v-if="isSearching"
+          indeterminate
+          color="primary"
+        ></v-progress-circular>
       </v-col>
     </v-row>
+    <v-dialog
+      v-model="occurError"
+    >
+      エラーが発生しました。通信環境をご確認ください。
+    </v-dialog>
+    <v-dialog
+      v-model="occurNotHit"
+      max-width="300"
+    >
+      <v-card>
+        <v-card-title>
+          ヒットなし
+        </v-card-title>
+        <v-card-text>
+          {{
+            randomMessageOfNotHit()
+          }}
+        </v-card-text>
+      </v-card>
+    </v-dialog>
+    <FailureList
+      v-if="searchFailuresResults.length !== 0 && targetOfSearch === 'failure'"
+      :failures="searchFailuresResults"
+    />
+    <SayingList
+      v-if="searchSayingsResults.length !== 0 && targetOfSearch === 'saying'"
+      :sayings="searchSayingsResults"
+    />
   </div>
 </template>
 
 <script>
-import { API, graphqlOperation } from 'aws-amplify'
-import Failurelist from '@/components/failure/FailureList'
-import { searchFailures } from '~/graphql/queries'
+import { API } from 'aws-amplify'
+import FailureList from '@/components/failure/FailureList'
+import SayingList from '@/components/saying/SayingList'
+import { searchFailures, searchSayings } from '~/graphql/queries'
 export default {
   components: {
-    Failurelist
+    FailureList,
+    SayingList
   },
   data () {
     return {
       targetOfSearch: 'failure',
       searchWords: '',
-      searchResults: []
+      searchFailuresResults: [],
+      searchSayingsResults: [],
+      isSearching: false,
+      occurError: false,
+      occurNotHit: false
     }
   },
   methods: {
     async search () {
-      // くるくるを回す
+      this.isSearching = true
       if (this.targetOfSearch === 'failure') {
-        console.log('failure')
-        await this.searchFailures()
+        const results = await this.searchFailures()
+        this.isSearching = false
+        // error
+        if (results === false) {
+          this.occurError = true
+          return
+        }
+        // ヒットなし
+        if (results.length === 0) {
+          this.occurNotHit = true
+          return
+        }
+        this.searchFailuresResults = results
+      } else if (this.targetOfSearch === 'saying') {
+        const results = await this.searchSayings()
+        this.isSearching = false
+        // error
+        if (results === false) {
+          this.occurError = true
+          return
+        }
+        // ヒットなし
+        if (results.length === 0) {
+          this.occurNotHit = true
+          return
+        }
+        this.searchSayingsResults = results
       }
     },
     async searchFailures () {
       const { searchWords } = this
       if (!searchWords) { return }
-      try {
-        const results = (await API.graphql(
-          graphqlOperation(searchFailures, {
-            filter: { content: { match: 'hoge' } }
-          })
-        )).data.searchFailures.items
-        this.searchResults = results
-      } catch (e) {
-        console.error(e)
-      }
+      const result = await API.graphql({
+        query: searchFailures,
+        variables: {
+          filter: {
+            or: [
+              { title: { match: searchWords } },
+              { content: { match: searchWords } }
+            ]
+          }
+        }
+      }).then((results) => {
+        return results.data.searchFailures.items
+      }).catch((e) => {
+        console.log(e)
+        return false
+      })
+      return result
+    },
+    async searchSayings () {
+      const { searchWords } = this
+      if (!searchWords) { return }
+      const result = await API.graphql({
+        query: searchSayings,
+        variables: {
+          filter: { content: { match: searchWords } }
+        }
+      }).then((results) => {
+        return results.data.searchSayings.items
+      }).catch((e) => {
+        console.log(e)
+        return false
+      })
+      return result
+    },
+    randomMessageOfNotHit () {
+      const array = [
+        'つまりあなたがパイオニア',
+        '君がみんなより挑戦してる証拠さ',
+        '君は検索結果の枠に収まる人じゃないだろ',
+        '君の中に答えがあるってことさ'
+      ]
+      return array[Math.floor(Math.random() * array.length)]
     }
   }
 }

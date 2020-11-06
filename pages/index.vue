@@ -1,7 +1,7 @@
 <template>
   <div>
     <FailureList :failures="failures"/>
-    <SayingList />
+    <SayingList :sayings="sayings"/>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 import { API } from 'aws-amplify'
 import FailureList from '@/components/failure/FailureList'
 import SayingList from '@/components/saying/SayingList'
-import { listFailures } from '~/graphql/custumQueries'
+import { listFailures, listSayings } from '~/graphql/custumQueries'
 
 export default {
   components: {
@@ -18,11 +18,13 @@ export default {
   },
   data () {
     return {
-      failures: []
+      failures: [],
+      sayings: []
     }
   },
   created () {
     this.getFailures()
+    this.getSayings()
   },
   methods: {
     async getFailures () {
@@ -30,6 +32,12 @@ export default {
         query: listFailures
       })
       this.failures = failures.data.listFailures.items
+    },
+    async getSayings () {
+      const sayings = await API.graphql({
+        query: listSayings
+      })
+      this.sayings = sayings.data.listSayings.items
     }
   },
   head () {

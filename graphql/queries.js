@@ -195,7 +195,6 @@ export const searchFailures = /* GraphQL */ `
         owner
         _version
         _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
@@ -381,7 +380,6 @@ export const searchSayings = /* GraphQL */ `
         failureID
         _version
         _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         failure {

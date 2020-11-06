@@ -5,12 +5,25 @@
       {{ failure.content }}
     </v-card-text>
     <v-card-actions>
-      <v-btn @click="showSayings">
-        名言一覧
-      </v-btn>
-      <v-btn @click="createSaying">
-        名言を送る
-      </v-btn>
+      <v-row>
+        <v-col>
+          <v-btn @click="showSayings">
+            名言一覧
+          </v-btn>
+          <v-btn @click="createSaying">
+            名言を送る
+          </v-btn>
+        </v-col>
+        <v-col>
+          <v-btn
+            text
+          >
+            <v-icon>
+              mdi-heart
+            </v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
     </v-card-actions>
   </v-card>
 </template>
