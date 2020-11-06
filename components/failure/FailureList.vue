@@ -56,7 +56,6 @@
 <script>
 import { API } from 'aws-amplify'
 import FailureCard from '@/components/failure/FailureCard'
-import { listFailures } from '~/graphql/custumQueries'
 import { createSaying } from '~/graphql/mutations'
 
 export default {
@@ -64,9 +63,15 @@ export default {
   components: {
     FailureCard
   },
+  props: {
+    failures: {
+      type: Array,
+      default: () => ([]),
+      required: false
+    }
+  },
   data () {
     return {
-      failures: [],
       showSayingsDialog: false,
       showSendSayingDialog: false,
       targetFailure: {},
@@ -76,16 +81,7 @@ export default {
       }
     }
   },
-  created () {
-    this.getFailures()
-  },
   methods: {
-    async getFailures () {
-      const failures = await API.graphql({
-        query: listFailures
-      })
-      this.failures = failures.data.listFailures.items
-    },
     openSayingsDialog (failure) {
       this.targetFailure = failure
       this.showSayingsDialog = true

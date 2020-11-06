@@ -78,3 +78,41 @@ export const listFailures = /* GraphQL */ `
     }
   }
 `
+export const listSayings = /* GraphQL */ `
+  query ListSayings(
+    $filter: ModelSayingFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listSayings(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        content
+        owner
+        failureID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        failure {
+          id
+          title
+          content
+          owner
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        likes {
+          nextToken
+          startedAt
+        }
+      }
+      nextToken
+      startedAt
+    }
+  }
+`
