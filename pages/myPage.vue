@@ -6,9 +6,9 @@
         <v-quotations />
       </v-col>
       <div class="bar">
-        <v-icon>mdi-feather</v-icon>
+        <v-icon color="white">mdi-feather</v-icon>
         <span>これまでに投稿した失敗談</span>
-        <v-icon>mdi-feather</v-icon>
+        <v-icon color="white">mdi-feather</v-icon>
       </div>
       <v-col
       cols="12"
@@ -18,9 +18,9 @@
         <v-failure :failure="failure" />
       </v-col>
       <div class="bar">
-        <v-icon>mdi-feather</v-icon>
+        <v-icon color="white">mdi-feather</v-icon>
         <span>これまでに送った名言</span>
-        <v-icon>mdi-feather</v-icon>
+        <v-icon color="white">mdi-feather</v-icon>
       </div>
       <v-col
       cols="12"
@@ -80,5 +80,10 @@ export default {
 </script>
 
 <style scoped>
-
+.bar{
+  color: white;
+  background-color:#5c606a;
+  padding: 1rem;
+  border-radius: 30px;
+}
 </style>

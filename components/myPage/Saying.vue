@@ -45,3 +45,19 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.v-card{
+  background-color: #f4dca5;
+  padding: 1rem;
+}
+.v-card__title,
+.v-card__text,
+.v-card__actions{
+  background-color: #fff;
+  margin: .5rem 0;
+}
+.v-card__text{
+  width: auto;
+}
+</style>
