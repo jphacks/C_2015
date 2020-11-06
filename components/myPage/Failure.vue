@@ -6,7 +6,7 @@
     </v-card-text>
     <v-card-actions>
       <v-card-text>
-        名言が<span>{{ propfailure }}</span>コ送られました！
+        名言が<span>{{ sayingsCount }}</span>コ送られました！
       </v-card-text>
       <v-btn @click="showSaying">名言一覧</v-btn>
       <v-btn @click="createSaying">名言を送る</v-btn>
@@ -24,7 +24,7 @@ export default {
   },
   data () {
     return {
-      propfailure: this.failure
+      sayingsCount: 0
     }
   },
   created () {
@@ -32,7 +32,12 @@ export default {
   },
   methods: {
     countSaying () {
-
+      const sayings = this.failure.sayings.items
+      let count = 0
+      sayings.forEach((e) => {
+        count += 1
+      })
+      this.sayingsCount = count
     }
   }
 }

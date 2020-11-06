@@ -25,7 +25,7 @@
 
 <script>
 import { API, Auth } from 'aws-amplify'
-import { listFailures, listSayings } from '~/graphql/queries'
+import { listFailures, listSayings } from '~/graphql/custumQueries'
 import VFailure from '~/components/myPage/Failure.vue'
 import VProfile from '~/components/myPage/Profile.vue'
 import VSaying from '~/components/myPage/Saying.vue'
