@@ -1,6 +1,45 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateOnesingle = /* GraphQL */ `
+  subscription OnCreateOnesingle($owner: String!) {
+    onCreateOnesingle(owner: $owner) {
+      id
+      owner
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateOnesingle = /* GraphQL */ `
+  subscription OnUpdateOnesingle($owner: String!) {
+    onUpdateOnesingle(owner: $owner) {
+      id
+      owner
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteOnesingle = /* GraphQL */ `
+  subscription OnDeleteOnesingle($owner: String!) {
+    onDeleteOnesingle(owner: $owner) {
+      id
+      owner
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateFailure = /* GraphQL */ `
   subscription OnCreateFailure($owner: String) {
     onCreateFailure(owner: $owner) {

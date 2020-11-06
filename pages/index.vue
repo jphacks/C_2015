@@ -1,33 +1,30 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col
-      cols="12"
-      v-for="failure in failures"
-      :key="failure.id"
-    >
-      <failure-card
-        :failure="failure"
-      />
-    </v-col>
-  </v-row>
+  <div>
+    <FailureList :failures="failures" />
+    <SayingList :sayings="sayings" />
+  </div>
 </template>
 
 <script>
-import FailureCard from '@/components/failure/FailureCard.vue'
 import { API } from 'aws-amplify'
-import { listFailures } from '~/graphql/queries'
+import FailureList from '@/components/failure/FailureList'
+import SayingList from '@/components/saying/SayingList'
+import { listFailures, listSayings } from '~/graphql/custumQueries'
 
 export default {
   components: {
-    FailureCard
+    FailureList,
+    SayingList
   },
   data () {
     return {
-      failures: []
+      failures: [],
+      sayings: []
     }
   },
   created () {
     this.getFailures()
+    this.getSayings()
   },
   methods: {
     async getFailures () {
@@ -35,6 +32,12 @@ export default {
         query: listFailures
       })
       this.failures = failures.data.listFailures.items
+    },
+    async getSayings () {
+      const sayings = await API.graphql({
+        query: listSayings
+      })
+      this.sayings = sayings.data.listSayings.items
     }
   },
   head () {

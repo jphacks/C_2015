@@ -1,6 +1,67 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const syncOnesingles = /* GraphQL */ `
+  query SyncOnesingles(
+    $filter: ModelOnesingleFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncOnesingles(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        owner
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getOnesingle = /* GraphQL */ `
+  query GetOnesingle($id: ID!) {
+    getOnesingle(id: $id) {
+      id
+      owner
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listOnesingles = /* GraphQL */ `
+  query ListOnesingles(
+    $filter: ModelOnesingleFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listOnesingles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        owner
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
 export const listFailures = /* GraphQL */ `
   query ListFailures(
     $filter: ModelFailureFilterInput
@@ -134,7 +195,6 @@ export const searchFailures = /* GraphQL */ `
         owner
         _version
         _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
@@ -320,7 +380,6 @@ export const searchSayings = /* GraphQL */ `
         failureID
         _version
         _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         failure {
@@ -688,6 +747,54 @@ export const listNices = /* GraphQL */ `
     }
   }
 `;
+export const byFailure = /* GraphQL */ `
+  query ByFailure(
+    $failureID: ID
+    $content: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelSayingFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    byFailure(
+      failureID: $failureID
+      content: $content
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        content
+        owner
+        failureID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        failure {
+          id
+          title
+          content
+          owner
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        likes {
+          nextToken
+          startedAt
+        }
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
 export const syncNices = /* GraphQL */ `
   query SyncNices(
     $filter: ModelNiceFilterInput
@@ -774,6 +881,47 @@ export const listLikes = /* GraphQL */ `
     $nextToken: String
   ) {
     listLikes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        owner
+        sayingID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        saying {
+          id
+          content
+          owner
+          failureID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const bySaying = /* GraphQL */ `
+  query BySaying(
+    $sayingID: ID
+    $sortDirection: ModelSortDirection
+    $filter: ModelLikeFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    bySaying(
+      sayingID: $sayingID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
       items {
         id
         owner

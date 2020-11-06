@@ -5,8 +5,25 @@
       {{ failure.content }}
     </v-card-text>
     <v-card-actions>
-      <v-btn @click="showSaying">名言一覧</v-btn>
-      <v-btn @click="createSaying">名言を送る</v-btn>
+      <v-row>
+        <v-col>
+          <v-btn @click="showSayings">
+            名言一覧
+          </v-btn>
+          <v-btn @click="createSaying">
+            名言を送る
+          </v-btn>
+        </v-col>
+        <v-col>
+          <v-btn
+            text
+          >
+            <v-icon>
+              mdi-heart
+            </v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
     </v-card-actions>
   </v-card>
 </template>
@@ -18,6 +35,14 @@ export default {
     failure: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    showSayings () {
+      this.$emit('showSayings', this.failure)
+    },
+    createSaying () {
+      this.$emit('showSendSaying', this.failure)
     }
   }
 }
