@@ -107,6 +107,16 @@ export const listSayings = /* GraphQL */ `
           updatedAt
         }
         likes {
+          items {
+            id
+            owner
+            sayingID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
           nextToken
           startedAt
         }
