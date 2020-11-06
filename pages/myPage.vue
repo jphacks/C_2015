@@ -1,21 +1,23 @@
 <template>
   <amplify-authenticator>
     <v-row justify="center" align="center">
-      <v-col cols="12" sm="8" md="6">
-        <v-card>
-          <v-card-title class="headline">
-            username:{{username}}さん
-          </v-card-title>
-        </v-card>
-        <v-col
-        cols="12"
-        v-for="failure in failures"
-        :key="failure.id"
-        >
-          <v-failure :failure="failure" />
-        </v-col>
-        <v-profile />
+      <v-col cols="12">
+        <v-profile :username=username />
         <v-quotations />
+      </v-col>
+      <v-col
+      cols="12"
+      v-for="failure in failures"
+      :key="failure.id"
+      >
+        <v-failure :failure="failure" />
+      </v-col>
+      <v-col
+      cols="12"
+      v-for="saying in sayings"
+      :key="saying.id"
+      >
+        <v-saying :saying="saying" />
       </v-col>
     </v-row>
   </amplify-authenticator>
@@ -23,16 +25,16 @@
 
 <script>
 import { API, Auth } from 'aws-amplify'
-import { listFailures } from '~/graphql/queries'
+import { listFailures, listSayings } from '~/graphql/queries'
 import VFailure from '~/components/myPage/Failure.vue'
 import VProfile from '~/components/myPage/Profile.vue'
-import VQuotations from '~/components/myPage/Quotations.vue'
+import VSaying from '~/components/myPage/Saying.vue'
 
 export default {
   components: {
     VFailure,
     VProfile,
-    VQuotations
+    VSaying
   },
   data () {
     return {
@@ -43,6 +45,7 @@ export default {
   },
   created () {
     this.getFailures()
+    this.getSayings()
     this.getUsername()
   },
   methods: {
@@ -51,6 +54,12 @@ export default {
         query: listFailures
       })
       this.failures = failures.data.listFailures.items
+    },
+    async getSayings () {
+      const sayings = await API.graphql({
+        query: listSayings
+      })
+      this.sayings = sayings.data.listSayings.items
     },
     async getUsername () {
       const user = await Auth.currentUserInfo()
