@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "shippaijin11a9f532_identitypool_11a9f532",
+    "identityPoolName": "shippaijin04da37a1_identitypool_04da37a1",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "shippa11a9f532",
-    "userPoolName": "shippaijin11a9f532_userpool_11a9f532",
+    "resourceNameTruncated": "shippa04da37a1",
+    "userPoolName": "shippaijin04da37a1_userpool_04da37a1",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "shippa11a9f532_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "shippa04da37a1_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "11a9f532",
-    "resourceName": "shippaijin11a9f532",
+    "sharedId": "04da37a1",
+    "resourceName": "shippaijin04da37a1",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -47,7 +47,7 @@
     },
     "useDefault": "defaultSocial",
     "hostedUI": true,
-    "hostedUIDomainName": "shippaijin11a9f532-11a9f532",
+    "hostedUIDomainName": "shippaijin04da37a1-04da37a1",
     "authProvidersUserPool": [
         "Facebook",
         "Google",

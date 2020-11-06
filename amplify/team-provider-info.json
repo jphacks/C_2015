@@ -1,25 +1,25 @@
 {
-    "dev": {
+    "prod": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-shippaijin-dev-165942-authRole",
-            "UnauthRoleArn": "arn:aws:iam::107040071340:role/amplify-shippaijin-dev-165942-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::107040071340:role/amplify-shippaijin-dev-165942-authRole",
+            "AuthRoleName": "amplify-shippaijin-prod-64552-authRole",
+            "UnauthRoleArn": "arn:aws:iam::107040071340:role/amplify-shippaijin-prod-64552-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::107040071340:role/amplify-shippaijin-prod-64552-authRole",
             "Region": "ap-northeast-1",
-            "DeploymentBucketName": "amplify-shippaijin-dev-165942-deployment",
-            "UnauthRoleName": "amplify-shippaijin-dev-165942-unauthRole",
-            "StackName": "amplify-shippaijin-dev-165942",
-            "StackId": "arn:aws:cloudformation:ap-northeast-1:107040071340:stack/amplify-shippaijin-dev-165942/89f988d0-1daa-11eb-a372-0ef996f5a9f8",
-            "AmplifyAppId": "d18gsphnj0gzl8"
+            "DeploymentBucketName": "amplify-shippaijin-prod-64552-deployment",
+            "UnauthRoleName": "amplify-shippaijin-prod-64552-unauthRole",
+            "StackName": "amplify-shippaijin-prod-64552",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:107040071340:stack/amplify-shippaijin-prod-64552/73590e80-2079-11eb-a540-0a6ec06a2d7e",
+            "AmplifyAppId": "d3mzzafnjamlbh"
         },
         "categories": {
             "auth": {
-                "shippaijin11a9f532": {
+                "shippaijin04da37a1": {
                     "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"1291694454528180\",\"client_secret\":\"719fff21cbc418528f4e6e349cdc7674\"},{\"ProviderName\":\"Google\",\"client_id\":\"http://508285759805-k848pc41gq4r6lnqbbm8ek444fi25920.apps.googleusercontent.com/\",\"client_secret\":\"CWhJ1q0OM1MeiyqdMAyzxN23\"},{\"ProviderName\":\"LoginWithAmazon\",\"client_id\":\"amzn1.application-oa2-client.6931d2e6af9c4530bfdf1ca041bac500\",\"client_secret\":\"e7be1e837da335e33e66c031bc82732ffebefdfee351e9589ae17e4d47ebc3ee\"}]"
                 }
             },
             "hosting": {
                 "amplifyhosting": {
-                    "appId": "d18gsphnj0gzl8",
+                    "appId": "d3mzzafnjamlbh",
                     "type": "manual"
                 }
             }
