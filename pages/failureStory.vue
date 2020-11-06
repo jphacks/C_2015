@@ -1,30 +1,19 @@
 <template>
   <amplify-authenticator>
     <v-row justify="center" align="center">
-      <v-col cols="12" sm="8" md="6">
-        <div class="text-center">
-          <logo />
-          <vuetify-logo />
-        </div>
-        <v-card>
-          <v-card-title class="headline">
-            失敗談投稿フォーム
-          </v-card-title>
-          <v-card-text>
-            hogehoge
-          </v-card-text>
-        </v-card>
+      <v-col cols="12" sm="10" md="10">
+        <head-card></head-card>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col>
-        <v-card>
-          <v-text-field v-model="title" label="Title" />
-          <v-textarea v-model="content" label="Content" />
-        </v-card>
-        <v-btn @click="createFailure">
+    <v-row justify="center">
+      <v-col cols="12" sm="10" md="10">
+        <v-card class="post-form text-center">
+        <v-text-field class="post-form-title" v-model="title" label="タイトル" />
+        <v-textarea class="post-form-text" v-model="content" label="本文" />
+        <v-btn class="post-form-btn" @click="createFailure">
           失敗談を投稿する
         </v-btn>
+        </v-card>
       </v-col>
     </v-row>
   </amplify-authenticator>
@@ -33,9 +22,11 @@
 <script>
 import { API } from 'aws-amplify'
 import { createFailure } from '~/graphql/mutations'
+import HeadCard from '~/components/failureStory/HeadCard.vue'
 
 export default {
   components: {
+    HeadCard
   },
   data () {
     return {

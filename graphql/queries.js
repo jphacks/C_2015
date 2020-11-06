@@ -17,6 +17,7 @@ export const syncOnesingles = /* GraphQL */ `
       items {
         id
         owner
+        onesignalId
         _version
         _deleted
         _lastChangedAt
@@ -33,6 +34,7 @@ export const getOnesingle = /* GraphQL */ `
     getOnesingle(id: $id) {
       id
       owner
+      onesignalId
       _version
       _deleted
       _lastChangedAt
@@ -51,6 +53,7 @@ export const listOnesingles = /* GraphQL */ `
       items {
         id
         owner
+        onesignalId
         _version
         _deleted
         _lastChangedAt

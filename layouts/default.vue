@@ -3,7 +3,6 @@
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
-      :clipped="clipped"
       fixed
       app
     >
@@ -40,7 +39,7 @@
       </v-container>
     </v-main>
     <v-footer
-      :absolute="!fixed"
+      :absolute="fixed"
       app
     >
       <span>「ささみゆでたのんは意外と長いこと腐らん」By きょうこ</span>
@@ -86,17 +85,19 @@ export default {
 }
 </script>
 
-<!--
-<style lang="scss" scoped>
-.v-app-bar.v-toolbar,
+<style scoped>
+.v-app-bar,
+.v-toolbar,
 .v-footer{
-  background-color: $orangered !important;
+  background-color: #db8e6e !important;
+}
+.v-footer span{
+  color: white;
 }
 .v-navigation-drawer{
-  background-color: $yellowbeige;
-  .v-icon{
-    color: $deepred;
+  background-color: #f4dca5;
 }
+.v-navigation-drawer .v-icon{
+    color: #7e0f14;
 }
 </style>
--->
