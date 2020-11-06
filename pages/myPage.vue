@@ -5,24 +5,22 @@
         <v-profile :username=username />
         <v-quotations />
       </v-col>
-      <div class="bar">
-        <v-icon color="white">mdi-feather</v-icon>
-        <span>これまでに投稿した失敗談</span>
-        <v-icon color="white">mdi-feather</v-icon>
-      </div>
-      <failure-list :failures="failures" />
-      <div class="bar">
-        <v-icon color="white">mdi-feather</v-icon>
-        <span>これまでに送った名言</span>
-        <v-icon color="white">mdi-feather</v-icon>
-      </div>
-      <v-col
-      cols="10"
-      v-for="saying in sayings"
-      :key="saying.id"
-      >
-        <v-saying :saying="saying" />
+      <v-col cols="8">
+        <div class="bar text-center">
+          <v-icon color="white">mdi-feather</v-icon>
+          <span>これまでに投稿した失敗談</span>
+          <v-icon color="white">mdi-feather</v-icon>
+        </div>
       </v-col>
+      <failure-list :failures="failures" />
+      <v-col cols="8">
+        <div class="bar text-center">
+          <v-icon color="white">mdi-feather</v-icon>
+          <span>これまでに送った名言</span>
+          <v-icon color="white">mdi-feather</v-icon>
+        </div>
+      </v-col>
+      <saying-list :sayings="sayings" />
     </v-row>
   </amplify-authenticator>
 </template>
@@ -30,15 +28,15 @@
 <script>
 import { API, Auth } from 'aws-amplify'
 import FailureList from '@/components/myPage/FailureList'
+import SayingList from '@/components/myPage/SayingList'
 import { listFailures, listSayings } from '~/graphql/custumQueries'
 import VProfile from '~/components/myPage/Profile.vue'
-import VSaying from '~/components/myPage/Saying.vue'
 
 export default {
   components: {
     FailureList,
-    VProfile,
-    VSaying
+    SayingList,
+    VProfile
   },
   data () {
     return {
