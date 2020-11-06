@@ -3,7 +3,6 @@
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
-      :clipped="clipped"
       fixed
       app
     >
@@ -40,7 +39,7 @@
       </v-container>
     </v-main>
     <v-footer
-      :absolute="!fixed"
+      :absolute="fixed"
       app
     >
       <span>「ささみゆでたのんは意外と長いこと腐らん」By きょうこ</span>

@@ -1,7 +1,7 @@
 <template>
   <amplify-authenticator>
     <v-row justify="center" align="center">
-      <v-col cols="12">
+      <v-col cols="10">
         <v-profile :username=username />
         <v-quotations />
       </v-col>
@@ -11,7 +11,7 @@
         <v-icon color="white">mdi-feather</v-icon>
       </div>
       <v-col
-      cols="12"
+      cols="10"
       v-for="failure in failures"
       :key="failure.id"
       >
@@ -23,7 +23,7 @@
         <v-icon color="white">mdi-feather</v-icon>
       </div>
       <v-col
-      cols="12"
+      cols="10"
       v-for="saying in sayings"
       :key="saying.id"
       >

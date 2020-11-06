@@ -1,12 +1,12 @@
 <template>
   <amplify-authenticator>
     <v-row justify="center" align="center">
-      <v-col cols="12" sm="8" md="6">
+      <v-col cols="12" sm="10" md="10">
         <head-card></head-card>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col>
+    <v-row justify="center">
+      <v-col cols="12" sm="10" md="10">
         <v-card class="post-form text-center">
         <v-text-field class="post-form-title" v-model="title" label="タイトル" />
         <v-textarea class="post-form-text" v-model="content" label="本文" />
