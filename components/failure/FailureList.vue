@@ -40,12 +40,16 @@
             label="名言"
             :rules="[rulesCreateSaying.required]"
             placeholder="ここのテキスト募集"
-          >本文</v-text-field>
+          >
+            本文
+          </v-text-field>
         </v-card-actions>
         <v-card-actions>
           <v-btn
             @click="createSaying"
-          >名言を送る</v-btn>
+          >
+            名言を送る
+          </v-btn>
         </v-card-actions>
         {{ targetFailure }}
       </v-card>
