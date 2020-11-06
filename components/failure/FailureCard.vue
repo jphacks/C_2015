@@ -1,30 +1,23 @@
 <template>
   <v-card>
-    <v-card-title>{{ failure.title }}</v-card-title>
-    <v-card-text>
-      {{ failure.content }}
-    </v-card-text>
-    <v-card-actions>
-      <v-row>
-        <v-col>
-          <v-btn @click="showSayings">
-            名言一覧
-          </v-btn>
-          <v-btn @click="createSaying">
-            名言を送る
-          </v-btn>
-        </v-col>
-        <v-col>
-          <v-btn
-            text
-          >
-            <v-icon>
-              mdi-heart
-            </v-icon>
-          </v-btn>
-        </v-col>
-      </v-row>
-    </v-card-actions>
+    <v-row>
+      <v-col cols="2">
+        {{ failure.owner }}
+      </v-col>
+      <v-col cols="10">
+        <v-card-title class="title">{{ failure.title }}</v-card-title>
+        <v-card-text class="content">
+          {{ failure.content }}
+        </v-card-text>
+        <v-card-actions class="actions">
+          <v-card-text>
+            名言が<span>{{ sayingsCount }}</span>コ送られました！
+          </v-card-text>
+          <v-btn @click="showSayings">名言一覧</v-btn>
+          <v-btn @click="createSaying">名言を送る</v-btn>
+        </v-card-actions>
+      </v-col>
+    </v-row>
   </v-card>
 </template>
 
@@ -37,13 +30,50 @@ export default {
       required: true
     }
   },
+  data () {
+    return {
+      sayingsCount: 0
+    }
+  },
+  created () {
+    this.countSaying()
+  },
   methods: {
     showSayings () {
       this.$emit('showSayings', this.failure)
     },
     createSaying () {
       this.$emit('showSendSaying', this.failure)
+    },
+    countSaying () {
+      const sayings = this.failure.sayings.items
+      let count = 0
+      sayings.forEach((e) => {
+        count += 1
+      })
+      this.sayingsCount = count
     }
   }
 }
 </script>
+
+<style scoped>
+.v-card{
+  background-color: #f4dca5;
+  padding: 1rem;
+}
+.v-card__title,
+.v-card__text,
+.v-card__actions{
+  background-color: #fff;
+  margin: .5rem 0;
+}
+.v-card__text{
+  width: auto;
+}
+.title{
+  margin-right: 30%;
+}
+.actions{
+}
+</style>
