@@ -93,7 +93,9 @@ type Onesingle @model
       { allow: owner }
     ]
   )
+  @key(name: "byOwner", fields: ["owner"])
 {
   id: ID!
-  owner: String
+  owner: String!
+  onesignalId: String!
 }

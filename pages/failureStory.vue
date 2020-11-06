@@ -20,7 +20,7 @@
       <v-col>
         <v-card>
           <v-text-field v-model="title" label="Title" />
-          <v-text-field v-model="content" label="Content" />
+          <v-textarea v-model="content" label="Content" />
         </v-card>
         <v-btn @click="createFailure">
           失敗談を投稿する
