@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "api": {
+      "shippaijin": [
+        "read"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

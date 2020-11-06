@@ -1,0 +1,105 @@
+type Failure
+  @model
+  @searchable
+  @auth (
+    rules: [
+      { allow: owner },
+      { allow: public, operations: [read] }
+    ]
+  )
+{
+  id: ID!
+  title: String!
+  content: String!
+  owner: String
+  sayings: [Saying] @connection(fields: ["id"])
+  metoos: [Metoo] @connection(fields: ["id"])
+  sorrys: [Sorry] @connection(fields: ["id"])
+  nices: [Nice] @connection(fields: ["id"])
+}
+type Saying
+  @model
+  @searchable
+  @auth (
+    rules: [
+      { allow: owner },
+      { allow: public, operations: [read] }
+    ]
+  )
+{
+  id: ID!
+  content: String!
+  owner: String
+  failureID: ID!
+  failure: Failure @connection(fields: ["failureID"])
+  likes: [Like] @connection(fields: ["id"])
+}
+type Metoo
+  @model
+  @auth (
+    rules: [
+      { allow: owner },
+      { allow: public, operations: [read] }
+    ]
+  )
+{
+  id: ID!
+  owner: String
+  failureID: ID!
+  failure: Failure @connection(fields: ["failureID"])
+}
+type Sorry
+  @model
+  @auth (
+    rules: [
+      { allow: owner },
+      { allow: public, operations: [read] }
+    ]
+  )
+{
+  id: ID!
+  owner: String
+  failureID: ID!
+  failure: Failure @connection(fields: ["failureID"])
+}
+type Nice
+  @model
+  @auth (
+    rules: [
+      { allow: owner },
+      { allow: public, operations: [read] }
+    ]
+  )
+{
+  id: ID!
+  owner: String
+  failureID: ID!
+  failure: Failure @connection(fields: ["failureID"])
+}
+type Like
+  @model
+  @auth (
+    rules: [
+      { allow: owner },
+      { allow: public, operations: [read] }
+    ]
+  )
+{
+  id: ID!
+  owner: String
+  sayingID: ID!
+  saying: Saying @connection(fields: ["sayingID"])
+}
+type Onesingle
+  @model
+  @auth (
+    rules: [
+      { allow: owner }
+    ]
+  )
+  @key(name: "byOwner", fields: ["owner"])
+{
+  id: ID!
+  owner: String!
+  onesignalId: String!
+}
