@@ -7,11 +7,18 @@
           <vuetify-logo />
         </div>
         <v-card>
-          <v-card-title class="headline">
-            失敗談投稿フォーム
+          <v-row>
+            <v-col col="12">
+
+            </v-col>
+          </v-row>
+          <v-card-title class="headline justify-center text-center">
+            <h2>失敗談投稿フォーム</h2>
           </v-card-title>
-          <v-card-text>
-            hogehoge
+          <v-card-text class="text-center">
+            あなたの失敗談を投稿しましょう！<br>
+            この話を元に、誰かが名言を送ってくれます。<br>
+            あなたの失敗談も、誰かの力になるかもしれません。
           </v-card-text>
         </v-card>
       </v-col>
