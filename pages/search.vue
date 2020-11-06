@@ -50,7 +50,7 @@
           v-if="isSearching"
           indeterminate
           color="primary"
-        ></v-progress-circular>
+        />
       </v-col>
     </v-row>
     <v-dialog
@@ -154,7 +154,6 @@ export default {
       }).then((results) => {
         return results.data.searchFailures.items
       }).catch((e) => {
-        console.log(e)
         return false
       })
       return result
@@ -170,7 +169,6 @@ export default {
       }).then((results) => {
         return results.data.searchSayings.items
       }).catch((e) => {
-        console.log(e)
         return false
       })
       return result

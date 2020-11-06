@@ -91,7 +91,7 @@ export default {
       name: 'しっぱ偉人',
       short_name: 'しっぱ偉人',
       description: 'しっぱ偉人',
-      lang: 'ja',
+      lang: 'ja'
     }
   },
 
@@ -99,11 +99,3 @@ export default {
   build: {
   }
 }
-
-module.exports = {
-  modules: [
-    ['nuxt-sass-resources-loader', [
-      '~/assets/variables.scss',
-    ]],
-  ],
-};

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <FailureList :failures="failures"/>
-    <SayingList :sayings="sayings"/>
+    <FailureList :failures="failures" />
+    <SayingList :sayings="sayings" />
   </div>
 </template>
 
