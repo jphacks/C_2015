@@ -89,7 +89,7 @@
         "Layers": [],
         "Timeout": "25",
         "Code": {
-          "S3Bucket": "amplify-shippaijin-prod-64552-deployment",
+          "S3Bucket": "amplify-shippaijin-dev-74438-deployment",
           "S3Key": "amplify-builds/shippaijinaftermade-2b59556e47372f7a5a4d-build.zip"
         }
       }

@@ -4,7 +4,7 @@ type Failure
   @auth (
     rules: [
       { allow: owner },
-      { allow: public, operations: [read] }
+      { allow: private, operations: [read] }
     ]
   )
 {
@@ -23,7 +23,7 @@ type Saying
   @auth (
     rules: [
       { allow: owner },
-      { allow: public, operations: [read] }
+      { allow: private, operations: [read] }
     ]
   )
 {
@@ -39,7 +39,7 @@ type Metoo
   @auth (
     rules: [
       { allow: owner },
-      { allow: public, operations: [read] }
+      { allow: private, operations: [read] }
     ]
   )
 {
@@ -53,7 +53,7 @@ type Sorry
   @auth (
     rules: [
       { allow: owner },
-      { allow: public, operations: [read] }
+      { allow: private, operations: [read] }
     ]
   )
 {
@@ -67,7 +67,7 @@ type Nice
   @auth (
     rules: [
       { allow: owner },
-      { allow: public, operations: [read] }
+      { allow: private, operations: [read] }
     ]
   )
 {
@@ -81,7 +81,7 @@ type Like
   @auth (
     rules: [
       { allow: owner },
-      { allow: public, operations: [read] }
+      { allow: private, operations: [read] }
     ]
   )
 {
