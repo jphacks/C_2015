@@ -2,9 +2,7 @@
   <v-card class="head-card">
       <v-row class="text-center">
         <v-col cols="12">
-          <div>
-            <h3>{{ username }}さんのマイページ</h3>
-          </div>
+          <h3 class="text-center"><span>{{ username }}さんのマイページ</span></h3>
         </v-col>
     </v-row>
   </v-card>
@@ -16,6 +14,14 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.v-card{
+  background-color: #7e0f14;
+  padding: 1rem;
+  border-radius: 20px;
+}
+h3 span{
+  background-color: #f8f0de;
+  padding: 1rem 20%;
+}
 </style>

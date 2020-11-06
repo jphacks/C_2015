@@ -86,17 +86,19 @@ export default {
 }
 </script>
 
-<!--
-<style lang="scss" scoped>
-.v-app-bar.v-toolbar,
+<style scoped>
+.v-app-bar,
+.v-toolbar,
 .v-footer{
-  background-color: $orangered !important;
+  background-color: #db8e6e !important;
+}
+.v-footer span{
+  color: white;
 }
 .v-navigation-drawer{
-  background-color: $yellowbeige;
-  .v-icon{
-    color: $deepred;
+  background-color: #f4dca5;
 }
+.v-navigation-drawer .v-icon{
+    color: #7e0f14;
 }
 </style>
--->

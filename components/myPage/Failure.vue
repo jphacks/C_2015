@@ -1,10 +1,10 @@
 <template>
   <v-card>
-    <v-card-title>{{ failure.title }}</v-card-title>
-    <v-card-text>
+    <v-card-title class="title">{{ failure.title }}</v-card-title>
+    <v-card-text class="content">
       {{ failure.content }}
     </v-card-text>
-    <v-card-actions>
+    <v-card-actions class="actions">
       <v-card-text>
         名言が<span>{{ sayingsCount }}</span>コ送られました！
       </v-card-text>
@@ -42,3 +42,25 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.v-card{
+  background-color: #f4dca5;
+  padding: 1rem;
+}
+.v-card__title,
+.v-card__text,
+.v-card__actions{
+  background-color: #fff;
+  margin: .5rem 0;
+}
+.v-card__text{
+  width: auto;
+}
+.title{
+  margin-right: 30%;
+}
+.actions{
+  margin-left: 20%;
+}
+</style>
