@@ -76,7 +76,7 @@
         "Layers": [],
         "Timeout": "25",
         "Code": {
-          "S3Bucket": "amplify-shippaijin-hoge-45813-deployment",
+          "S3Bucket": "amplify-shippaijin-dev-165942-deployment",
           "S3Key": "amplify-builds/shippaijin6d2d021d-2f74644f644f644e4131-build.zip"
         }
       }

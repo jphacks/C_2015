@@ -12,10 +12,10 @@ type Failure
   title: String!
   content: String!
   owner: String
-  sayings: [Saying] @connection(keyName: "byFailure", fields: ["id"])
-  metoos: [Metoo] @connection(keyName: "byFailure", fields: ["id"])
-  sorrys: [Sorry] @connection(keyName: "byFailure", fields: ["id"])
-  nices: [Nice] @connection(keyName: "byFailure", fields: ["id"])
+  sayings: [Saying] @connection(fields: ["id"])
+  metoos: [Metoo] @connection(fields: ["id"])
+  sorrys: [Sorry] @connection(fields: ["id"])
+  nices: [Nice] @connection(fields: ["id"])
 }
 type Saying
   @model
@@ -26,14 +26,13 @@ type Saying
       { allow: public, operations: [read] }
     ]
   )
-  @key(name: "byFailure", fields: ["failureID", "content"], queryField: "byFailure")
 {
   id: ID!
   content: String!
   owner: String
   failureID: ID!
   failure: Failure @connection(fields: ["failureID"])
-  likes: [Like] @connection(keyName: "bySaying", fields: ["id"])
+  likes: [Like] @connection(fields: ["id"])
 }
 type Metoo
   @model
@@ -43,7 +42,6 @@ type Metoo
       { allow: public, operations: [read] }
     ]
   )
-  @key(name: "byFailure", fields: ["failureID"], queryField: "byFailure")
 {
   id: ID!
   owner: String
@@ -58,7 +56,6 @@ type Sorry
       { allow: public, operations: [read] }
     ]
   )
-  @key(name: "byFailure", fields: ["failureID"], queryField: "byFailure")
 {
   id: ID!
   owner: String
@@ -73,7 +70,6 @@ type Nice
       { allow: public, operations: [read] }
     ]
   )
-  @key(name: "byFailure", fields: ["failureID"], queryField: "byFailure")
 {
   id: ID!
   owner: String
@@ -88,7 +84,6 @@ type Like
       { allow: public, operations: [read] }
     ]
   )
-  @key(name: "bySaying", fields: ["sayingID"], queryField: "bySaying")
 {
   id: ID!
   owner: String
