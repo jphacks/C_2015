@@ -33,7 +33,7 @@
           </v-btn>
           <v-btn @click="toggleNice" text>
             <v-icon>
-              thumbs-up-outline
+              mdi-thumb-up-outline
             </v-icon>
           </v-btn>
         </v-card-actions>
