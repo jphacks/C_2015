@@ -18,6 +18,11 @@ export default {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    showFailure () {
+      this.$emit('showFailure', this.saying)
+    }
   }
 }
 </script>
