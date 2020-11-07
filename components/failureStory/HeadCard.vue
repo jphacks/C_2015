@@ -1,11 +1,10 @@
 <template>
   <v-card class="head-card">
-    <v-container>
       <v-row class="text-center">
-        <v-col cols="1" class="d-flex align-items-center">
+        <v-col cols="2" class="d-flex justify-center align-items-center">
           <v-icon color="red darken-4" medium> mdi-feather </v-icon>
         </v-col>
-        <v-col cols="8">
+        <v-col cols="7">
           <div>
             <h2><span>失敗談投稿フォーム</span></h2>
           </div>
@@ -17,11 +16,10 @@
             </p>
           </div>
         </v-col>
-        <v-col cols="1" class="d-flex align-items-center">
+        <v-col cols="1" class="d-flex justify-center align-items-center">
           <v-icon color="red darken-4" medium> mdi-feather </v-icon>
         </v-col>
       </v-row>
-    </v-container>
   </v-card>
 </template>
 
