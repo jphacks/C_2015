@@ -52,7 +52,6 @@
         </v-card-actions>
       </v-col>
     </v-row>
-    {{ failure }}
   </v-card>
 </template>
 

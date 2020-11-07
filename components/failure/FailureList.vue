@@ -22,7 +22,6 @@
           <v-card-text>
             <span>{{ targetFailure.content }}</span>におくる...
           </v-card-text>
-          {{ targetFailure }}
         </div>
       </v-card>
     </v-dialog>
