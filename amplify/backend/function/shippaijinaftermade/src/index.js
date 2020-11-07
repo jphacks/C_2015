@@ -1,14 +1,15 @@
+require('isomorphic-fetch')
 const AWSAppSyncClient = require('aws-appsync').default
 const { AUTH_TYPE } = require('aws-appsync')
 const gql = require('graphql-tag')
-const query = gql`
+const query = gql(`
   query getFailure($id: ID!) {
     getFailure (id: $id) {
       title
       owner
     }
   }
-`
+`)
 
 exports.handler = event => {
   //eslint-disable-line
@@ -26,7 +27,7 @@ exports.handler = event => {
     console.log(newItem)
     const content = newItem.content.S
     const failureId = newItem.failureID.S
-
+    console.log('start')
     client.query({
       query,
       variables: {
@@ -37,6 +38,7 @@ exports.handler = event => {
     }).catch((error) => {
       console.log(error)
     })
+    console.log('end')
 
   });
   return Promise.resolve('Successfully processed DynamoDB record');

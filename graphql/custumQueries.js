@@ -22,7 +22,6 @@ export const listFailures = /* GraphQL */ `
             updatedAt
           }
           nextToken
-          startedAt
         }
         metoos {
           items {
@@ -33,7 +32,6 @@ export const listFailures = /* GraphQL */ `
             updatedAt
           }
           nextToken
-          startedAt
         }
         sorrys {
           items {
@@ -44,7 +42,6 @@ export const listFailures = /* GraphQL */ `
             updatedAt
           }
           nextToken
-          startedAt
         }
         nices {
           items {
@@ -55,11 +52,9 @@ export const listFailures = /* GraphQL */ `
             updatedAt
           }
           nextToken
-          startedAt
         }
       }
       nextToken
-      startedAt
     }
   }
 `
@@ -94,11 +89,9 @@ export const listSayings = /* GraphQL */ `
             updatedAt
           }
           nextToken
-          startedAt
         }
       }
       nextToken
-      startedAt
     }
   }
 `

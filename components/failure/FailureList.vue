@@ -39,7 +39,7 @@
             v-model="createdSaying"
             label="名言"
             :rules="[rulesCreateSaying.required]"
-            placeholder="ここのテキスト募集"
+            placeholder="大学生よ単位を抱け"
           >
             本文
           </v-text-field>

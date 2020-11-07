@@ -9,7 +9,7 @@
 import { API } from 'aws-amplify'
 import FailureList from '@/components/failure/FailureList'
 import SayingList from '@/components/saying/SayingList'
-import { listFailures, listSayings } from '~/graphql/queries'
+import { listFailures, listSayings } from '~/graphql/custumQueries'
 
 export default {
   components: {
