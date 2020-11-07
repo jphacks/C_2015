@@ -13,10 +13,14 @@
     <v-dialog
       v-model="showFailureDialog"
     >
-    <!--ここにmyPageのfailureコンポーネントを表示させたい-->
-    <!--がなぜかエラーを吐く-->
     <v-card>
-      {{ targetSayingFailure }}
+      <v-card-title>
+        {{ targetFailure.title }}
+      </v-card-title>
+      <v-card-text>
+        {{ targetFailure.content }}
+      </v-card-text>
+      {{ targetFailure}}
     </v-card>
     </v-dialog>
   </v-row>
