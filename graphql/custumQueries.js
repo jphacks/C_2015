@@ -10,51 +10,36 @@ export const listFailures = /* GraphQL */ `
         title
         content
         owner
-        createdAt
-        updatedAt
         sayings {
           items {
             id
             content
             owner
             failureID
-            createdAt
-            updatedAt
           }
-          nextToken
         }
         metoos {
           items {
             id
             owner
             failureID
-            createdAt
-            updatedAt
           }
-          nextToken
         }
         sorrys {
           items {
             id
             owner
             failureID
-            createdAt
-            updatedAt
           }
-          nextToken
         }
         nices {
           items {
             id
             owner
             failureID
-            createdAt
-            updatedAt
           }
-          nextToken
         }
       }
-      nextToken
     }
   }
 `
@@ -70,23 +55,17 @@ export const listSayings = /* GraphQL */ `
         content
         owner
         failureID
-        createdAt
-        updatedAt
         failure {
           id
           title
           content
           owner
-          createdAt
-          updatedAt
         }
         likes {
           items {
             id
             owner
             sayingID
-            createdAt
-            updatedAt
           }
           nextToken
         }

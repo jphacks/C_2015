@@ -8,6 +8,7 @@
 import { API } from 'aws-amplify'
 import FailureList from '@/components/failure/FailureList'
 import { listFailures, listSayings } from '~/graphql/custumQueries'
+import { getFailure } from '~/graphql/queries'
 
 export default {
   components: {
@@ -15,7 +16,8 @@ export default {
   },
   data () {
     return {
-      failures: []
+      failures: [],
+      sayings: []
     }
   },
   created () {
@@ -26,7 +28,16 @@ export default {
       const failures = await API.graphql({
         query: listFailures
       })
-      this.failures = failures.data.listFailures.items
+      const realFailures = await Promise.all(failures.data.listFailures.items.map(async (item) => {
+        const id = item.id
+        const realFailure = await API.graphql({
+          query: getFailure,
+          variables: { id }
+        })
+        return realFailure.data.getFailure
+      }))
+      console.log(realFailures)
+      this.failures = realFailures
     },
     async getSayings () {
       const sayings = await API.graphql({
