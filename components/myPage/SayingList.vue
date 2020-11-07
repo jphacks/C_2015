@@ -20,7 +20,6 @@
       <v-card-text>
         {{ targetFailure.content }}
       </v-card-text>
-      {{ targetFailure}}
     </v-card>
     </v-dialog>
   </v-row>
@@ -49,7 +48,8 @@ export default {
   },
   methods: {
     openFailureDialog (saying) {
-      this.targetSayingFailure = saying.failure
+      console.log(saying)
+      this.targetFailure = saying.failure
       this.showFailureDialog = true
     }
   }

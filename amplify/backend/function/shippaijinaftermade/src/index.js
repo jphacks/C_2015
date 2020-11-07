@@ -36,7 +36,24 @@ exports.handler = event => {
       }
     }).then((result) => {
       console.log(result)
-
+      axios({
+        method: "post",
+        url: "https://onesignal.com/api/v1/notifications",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Basic ${process.env.ONESINGAL_REST_API_KEY}`
+        },
+        data: {
+          app_id: '0e1b6663-04df-4018-8e54-009c0450bd93',
+          headings: {
+            ja: 'あなたの失敗談に名言がつきました'
+          },
+          contents: {
+            ja: 'meigen'
+          },
+          include_player_ids: [result.data.getOnesingle]
+        }
+      })
     }).catch((error) => {
       console.log(error)
     })

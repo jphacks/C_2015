@@ -23,7 +23,6 @@
             <span>{{ targetFailure.content }}</span>におくる...
           </v-card-text>
         </div>
-        {{ targetFailure.sayings}}
         <v-card-text
           v-if="targetFailure.sayings.items.length !== 0"
         >
@@ -93,7 +92,11 @@ export default {
     return {
       showSayingsDialog: false,
       showSendSayingDialog: false,
-      targetFailure: {},
+      targetFailure: {
+        sayings: {
+          items: {}
+        }
+      },
       createdSaying: '',
       rulesCreateSaying: {
         required: value => !!value || '名言を残してね'
