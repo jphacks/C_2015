@@ -17,6 +17,21 @@
           </v-card-text>
           <v-btn @click="showSayings">名言一覧</v-btn>
           <v-btn @click="createSaying">名言を送る</v-btn>
+          <v-btn @click="toggleMetoo" text>
+            <v-icon>
+              mdi-heart-outline
+            </v-icon>
+          </v-btn>
+          <v-btn @click="toggleSorry" text>
+            <v-icon>
+              mdi-coffee-outline
+            </v-icon>
+          </v-btn>
+          <v-btn @click="toggleNice" text>
+            <v-icon>
+              thumbs-up-outline
+            </v-icon>
+          </v-btn>
         </v-card-actions>
       </v-col>
     </v-row>
@@ -34,7 +49,10 @@ export default {
   },
   data () {
     return {
-      sayingsCount: 0
+      sayingsCount: 0,
+      isMetoo: false,
+      isSorry: false,
+      isNice: false
     }
   },
   created () {
@@ -54,6 +72,15 @@ export default {
         count += 1
       })
       this.sayingsCount = count
+    },
+    toggleMetoo () {
+      //
+    },
+    toggleSorry () {
+      //
+    },
+    toggleNice () {
+      //
     }
   }
 }
