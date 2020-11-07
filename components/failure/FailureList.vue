@@ -23,6 +23,19 @@
             <span>{{ targetFailure.content }}</span>におくる...
           </v-card-text>
         </div>
+        {{ targetFailure.sayings}}
+        <v-card-text
+          v-if="targetFailure.sayings.items.length !== 0"
+        >
+          <ul>
+            <li
+              v-for="item in targetFailure.sayings.items"
+              :key="item.id"
+            >
+              {{ item.content }}
+            </li>
+          </ul>
+        </v-card-text>
       </v-card>
     </v-dialog>
     <v-dialog

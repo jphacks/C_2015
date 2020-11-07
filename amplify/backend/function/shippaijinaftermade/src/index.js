@@ -10,6 +10,7 @@ const query = gql(`
     }
   }
 `)
+const axios = require('axios')
 
 exports.handler = event => {
   //eslint-disable-line
@@ -35,6 +36,7 @@ exports.handler = event => {
       }
     }).then((result) => {
       console.log(result)
+
     }).catch((error) => {
       console.log(error)
     })
