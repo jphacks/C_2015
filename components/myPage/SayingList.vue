@@ -3,7 +3,7 @@
     <v-col
       v-for="saying in sayings"
       :key="saying.id"
-      cols="12"
+      cols="10"
     >
       <saying-card
        :saying="saying"
