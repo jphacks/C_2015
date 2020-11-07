@@ -4,6 +4,10 @@
       <v-col cols="2">
         <div class="username">
           <span>{{ failure.owner }}</span>
+          <v-img
+        max-width="70px"
+        max-height="70px"
+        src="books.png"></v-img>
         </div>
       </v-col>
       <v-col cols="10">
