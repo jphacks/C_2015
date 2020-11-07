@@ -1,30 +1,25 @@
 <template>
   <div>
     <FailureList :failures="failures" />
-    <SayingList :sayings="sayings" />
   </div>
 </template>
 
 <script>
 import { API } from 'aws-amplify'
 import FailureList from '@/components/failure/FailureList'
-import SayingList from '@/components/saying/SayingList'
 import { listFailures, listSayings } from '~/graphql/custumQueries'
 
 export default {
   components: {
-    FailureList,
-    SayingList
+    FailureList
   },
   data () {
     return {
-      failures: [],
-      sayings: []
+      failures: []
     }
   },
   created () {
     this.getFailures()
-    this.getSayings()
   },
   methods: {
     async getFailures () {
