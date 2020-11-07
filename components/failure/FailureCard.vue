@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import { API, Auth } from 'aws-amplify'
+import { createMetoo, createNice, createSorry, deleteMetoo, deleteNice, deleteSorry } from '~/graphql/mutations'
 export default {
   name: 'FailureCard',
   props: {
@@ -56,11 +58,16 @@ export default {
       sayingsCount: 0,
       isMetoo: false,
       isSorry: false,
-      isNice: false
+      isNice: false,
+      username: ''
     }
   },
   created () {
     this.countSaying()
+    this.isMetoo = this.failure.metoos.items.some(metoo => metoo.owner === this.username)
+    this.isSorry = this.failure.sorrys.items.some(sorry => sorry.owner === this.username)
+    this.isMetoo = this.failure.nices.items.some(nice => nice.owner === this.username)
+    this.getUsername()
   },
   methods: {
     showSayings () {
@@ -77,14 +84,94 @@ export default {
       })
       this.sayingsCount = count
     },
+    async getUsername () {
+      const user = await Auth.currentUserInfo()
+      console.log(user)
+      this.username = user.username
+    },
     toggleMetoo () {
-      //
+      if (this.isMetoo) {
+        this.deleteMetoo()
+      } else {
+        this.createMetoo()
+      }
+      this.isMetoo = !this.isMetoo
     },
     toggleSorry () {
-      //
+      if (this.isSorry) {
+        this.deleteSorry()
+      } else {
+        this.createSorry()
+      }
+      this.isSorry = !this.isSorry
     },
     toggleNice () {
-      //
+      if (this.isNice) {
+        this.deleteNice()
+      } else {
+        this.createNice()
+      }
+      this.isNice = !this.isNice
+    },
+    async createNice () {
+      await API.graphql({
+        mutation: createNice,
+        variables: {
+          input: {
+            failureID: this.failure.id
+          }
+        }
+      })
+    },
+    async createMetoo () {
+      await API.graphql({
+        mutation: createMetoo,
+        variables: {
+          input: {
+            failureID: this.failure.id
+          }
+        }
+      })
+    },
+    async createSorry () {
+      await API.graphql({
+        mutation: createSorry,
+        variables: {
+          input: {
+            failureID: this.failure.id
+          }
+        }
+      })
+    },
+    async deleteNice () {
+      const action = this.failure.nices.items.find(item => item.owner === this.username)
+      const id = action.id
+      await API.graphql({
+        mutation: deleteNice,
+        variables: {
+          input: { id }
+        }
+      })
+    },
+    async deleteMetoo () {
+      const action = this.failure.metoos.items.find(item => item.owner === this.username)
+      const id = action.id
+      await API.graphql({
+        mutation: deleteMetoo,
+        variables: {
+          input: { id }
+        }
+      })
+    },
+    async deleteSorry () {
+      const action = this.failure.sorrys.items.find(item => item.owner === this.username)
+      const id = action.id
+      await API.graphql({
+        mutation: deleteSorry,
+        variables: {
+          input: { id }
+        }
+      })
     }
   }
 }
