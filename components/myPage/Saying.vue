@@ -18,6 +18,11 @@ export default {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    showFailure () {
+      this.$emit('showFailure', this.saying)
+    }
   }
 }
 </script>
@@ -35,5 +40,11 @@ export default {
 }
 .v-card__text{
   width: auto;
+}
+.v-btn{
+  box-shadow: none;
+  background-color: #9D1D22 !important;
+  color: white;
+  border-radius: 0;
 }
 </style>

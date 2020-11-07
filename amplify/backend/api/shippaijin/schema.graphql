@@ -4,7 +4,7 @@ type Failure
   @auth (
     rules: [
       { allow: owner },
-      { allow: public, operations: [read] }
+      { allow: private, operations: [read] }
     ]
   )
 {
@@ -12,10 +12,10 @@ type Failure
   title: String!
   content: String!
   owner: String
-  sayings: [Saying] @connection(fields: ["id"])
-  metoos: [Metoo] @connection(fields: ["id"])
-  sorrys: [Sorry] @connection(fields: ["id"])
-  nices: [Nice] @connection(fields: ["id"])
+  sayings: [Saying] @connection(keyName: "byFailure", fields: ["id"])
+  metoos: [Metoo] @connection(keyName: "byFailure", fields: ["id"])
+  sorrys: [Sorry] @connection(keyName: "byFailure", fields: ["id"])
+  nices: [Nice] @connection(keyName: "byFailure", fields: ["id"])
 }
 type Saying
   @model
@@ -23,25 +23,27 @@ type Saying
   @auth (
     rules: [
       { allow: owner },
-      { allow: public, operations: [read] }
+      { allow: private, operations: [read] }
     ]
   )
+  @key(name: "byFailure", fields:["failureID"])
 {
   id: ID!
   content: String!
   owner: String
   failureID: ID!
   failure: Failure @connection(fields: ["failureID"])
-  likes: [Like] @connection(fields: ["id"])
+  likes: [Like] @connection(keyName: "bySaying", fields: ["id"])
 }
 type Metoo
   @model
   @auth (
     rules: [
       { allow: owner },
-      { allow: public, operations: [read] }
+      { allow: private, operations: [read] }
     ]
   )
+  @key(name: "byFailure", fields:["failureID"])
 {
   id: ID!
   owner: String
@@ -53,9 +55,10 @@ type Sorry
   @auth (
     rules: [
       { allow: owner },
-      { allow: public, operations: [read] }
+      { allow: private, operations: [read] }
     ]
   )
+  @key(name: "byFailure", fields:["failureID"])
 {
   id: ID!
   owner: String
@@ -67,9 +70,10 @@ type Nice
   @auth (
     rules: [
       { allow: owner },
-      { allow: public, operations: [read] }
+      { allow: private, operations: [read] }
     ]
   )
+  @key(name: "byFailure", fields:["failureID"])
 {
   id: ID!
   owner: String
@@ -81,9 +85,10 @@ type Like
   @auth (
     rules: [
       { allow: owner },
-      { allow: public, operations: [read] }
+      { allow: private, operations: [read] }
     ]
   )
+  @key(name: "bySaying", fields:["sayingID"])
 {
   id: ID!
   owner: String

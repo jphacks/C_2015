@@ -11,8 +11,6 @@ export const createFailure = /* GraphQL */ `
       title
       content
       owner
-      createdAt
-      updatedAt
       sayings {
         items {
           id
@@ -54,6 +52,8 @@ export const createFailure = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -67,8 +67,6 @@ export const updateFailure = /* GraphQL */ `
       title
       content
       owner
-      createdAt
-      updatedAt
       sayings {
         items {
           id
@@ -110,6 +108,8 @@ export const updateFailure = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -123,8 +123,6 @@ export const deleteFailure = /* GraphQL */ `
       title
       content
       owner
-      createdAt
-      updatedAt
       sayings {
         items {
           id
@@ -166,6 +164,8 @@ export const deleteFailure = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -179,15 +179,11 @@ export const createSaying = /* GraphQL */ `
       content
       owner
       failureID
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        createdAt
-        updatedAt
         sayings {
           nextToken
         }
@@ -200,6 +196,8 @@ export const createSaying = /* GraphQL */ `
         nices {
           nextToken
         }
+        createdAt
+        updatedAt
       }
       likes {
         items {
@@ -211,6 +209,8 @@ export const createSaying = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -224,15 +224,11 @@ export const updateSaying = /* GraphQL */ `
       content
       owner
       failureID
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        createdAt
-        updatedAt
         sayings {
           nextToken
         }
@@ -245,6 +241,8 @@ export const updateSaying = /* GraphQL */ `
         nices {
           nextToken
         }
+        createdAt
+        updatedAt
       }
       likes {
         items {
@@ -256,6 +254,8 @@ export const updateSaying = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -269,15 +269,11 @@ export const deleteSaying = /* GraphQL */ `
       content
       owner
       failureID
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        createdAt
-        updatedAt
         sayings {
           nextToken
         }
@@ -290,6 +286,8 @@ export const deleteSaying = /* GraphQL */ `
         nices {
           nextToken
         }
+        createdAt
+        updatedAt
       }
       likes {
         items {
@@ -301,6 +299,8 @@ export const deleteSaying = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -313,15 +313,11 @@ export const createMetoo = /* GraphQL */ `
       id
       owner
       failureID
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        createdAt
-        updatedAt
         sayings {
           nextToken
         }
@@ -334,7 +330,11 @@ export const createMetoo = /* GraphQL */ `
         nices {
           nextToken
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -347,15 +347,11 @@ export const updateMetoo = /* GraphQL */ `
       id
       owner
       failureID
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        createdAt
-        updatedAt
         sayings {
           nextToken
         }
@@ -368,7 +364,11 @@ export const updateMetoo = /* GraphQL */ `
         nices {
           nextToken
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -381,15 +381,11 @@ export const deleteMetoo = /* GraphQL */ `
       id
       owner
       failureID
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        createdAt
-        updatedAt
         sayings {
           nextToken
         }
@@ -402,7 +398,11 @@ export const deleteMetoo = /* GraphQL */ `
         nices {
           nextToken
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -415,15 +415,11 @@ export const createSorry = /* GraphQL */ `
       id
       owner
       failureID
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        createdAt
-        updatedAt
         sayings {
           nextToken
         }
@@ -436,7 +432,11 @@ export const createSorry = /* GraphQL */ `
         nices {
           nextToken
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -449,15 +449,11 @@ export const updateSorry = /* GraphQL */ `
       id
       owner
       failureID
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        createdAt
-        updatedAt
         sayings {
           nextToken
         }
@@ -470,7 +466,11 @@ export const updateSorry = /* GraphQL */ `
         nices {
           nextToken
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -483,15 +483,11 @@ export const deleteSorry = /* GraphQL */ `
       id
       owner
       failureID
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        createdAt
-        updatedAt
         sayings {
           nextToken
         }
@@ -504,7 +500,11 @@ export const deleteSorry = /* GraphQL */ `
         nices {
           nextToken
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -517,15 +517,11 @@ export const createNice = /* GraphQL */ `
       id
       owner
       failureID
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        createdAt
-        updatedAt
         sayings {
           nextToken
         }
@@ -538,7 +534,11 @@ export const createNice = /* GraphQL */ `
         nices {
           nextToken
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -551,15 +551,11 @@ export const updateNice = /* GraphQL */ `
       id
       owner
       failureID
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        createdAt
-        updatedAt
         sayings {
           nextToken
         }
@@ -572,7 +568,11 @@ export const updateNice = /* GraphQL */ `
         nices {
           nextToken
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -585,15 +585,11 @@ export const deleteNice = /* GraphQL */ `
       id
       owner
       failureID
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        createdAt
-        updatedAt
         sayings {
           nextToken
         }
@@ -606,7 +602,11 @@ export const deleteNice = /* GraphQL */ `
         nices {
           nextToken
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -619,15 +619,11 @@ export const createLike = /* GraphQL */ `
       id
       owner
       sayingID
-      createdAt
-      updatedAt
       saying {
         id
         content
         owner
         failureID
-        createdAt
-        updatedAt
         failure {
           id
           title
@@ -639,7 +635,11 @@ export const createLike = /* GraphQL */ `
         likes {
           nextToken
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -652,15 +652,11 @@ export const updateLike = /* GraphQL */ `
       id
       owner
       sayingID
-      createdAt
-      updatedAt
       saying {
         id
         content
         owner
         failureID
-        createdAt
-        updatedAt
         failure {
           id
           title
@@ -672,7 +668,11 @@ export const updateLike = /* GraphQL */ `
         likes {
           nextToken
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -685,15 +685,11 @@ export const deleteLike = /* GraphQL */ `
       id
       owner
       sayingID
-      createdAt
-      updatedAt
       saying {
         id
         content
         owner
         failureID
-        createdAt
-        updatedAt
         failure {
           id
           title
@@ -705,7 +701,11 @@ export const deleteLike = /* GraphQL */ `
         likes {
           nextToken
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;

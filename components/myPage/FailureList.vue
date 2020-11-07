@@ -3,7 +3,7 @@
     <v-col
       v-for="failure in failures"
       :key="failure.id"
-      cols="12"
+      cols="10"
     >
       <FailureCard
         :failure="failure"
@@ -22,19 +22,8 @@
           <v-card-text>
             <span>{{ targetFailure.content }}</span>におくる...
           </v-card-text>
+          {{ targetFailure }}
         </div>
-        <v-card-text
-          v-if="targetFailure.sayings.items.length !== 0"
-        >
-          <ul>
-            <li
-              v-for="item in targetFailure.sayings.items"
-              :key="item.id"
-            >
-              {{ item.content }}
-            </li>
-          </ul>
-        </v-card-text>
       </v-card>
     </v-dialog>
     <v-dialog
@@ -73,7 +62,7 @@
 
 <script>
 import { API } from 'aws-amplify'
-import FailureCard from '@/components/failure/FailureCard'
+import FailureCard from '@/components/myPage/Failure'
 import { createSaying } from '~/graphql/mutations'
 
 export default {
@@ -92,11 +81,7 @@ export default {
     return {
       showSayingsDialog: false,
       showSendSayingDialog: false,
-      targetFailure: {
-        sayings: {
-          items: {}
-        }
-      },
+      targetFailure: {},
       createdSaying: '',
       rulesCreateSaying: {
         required: value => !!value || '名言を残してね'

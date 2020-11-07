@@ -29,7 +29,11 @@
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
+      <v-img
+        max-height="55px"
+        max-width="200px"
+        src="logo.png"
+      ></v-img>
       <v-spacer />
       <v-autocomplete />
     </v-app-bar>

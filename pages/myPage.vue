@@ -5,46 +5,38 @@
         <v-profile :username=username />
         <v-quotations />
       </v-col>
-      <div class="bar">
-        <v-icon color="white">mdi-feather</v-icon>
-        <span>これまでに投稿した失敗談</span>
-        <v-icon color="white">mdi-feather</v-icon>
-      </div>
-      <v-col
-      cols="10"
-      v-for="failure in failures"
-      :key="failure.id"
-      >
-        <v-failure :failure="failure" />
+      <v-col cols="8">
+        <div class="bar text-center">
+          <v-icon color="white">mdi-feather</v-icon>
+          <span>これまでに投稿した失敗談</span>
+          <v-icon color="white">mdi-feather</v-icon>
+        </div>
       </v-col>
-      <div class="bar">
-        <v-icon color="white">mdi-feather</v-icon>
-        <span>これまでに送った名言</span>
-        <v-icon color="white">mdi-feather</v-icon>
-      </div>
-      <v-col
-      cols="10"
-      v-for="saying in sayings"
-      :key="saying.id"
-      >
-        <v-saying :saying="saying" />
+      <failure-list :failures="failures" />
+      <v-col cols="8">
+        <div class="bar text-center">
+          <v-icon color="white">mdi-feather</v-icon>
+          <span>これまでに送った名言</span>
+          <v-icon color="white">mdi-feather</v-icon>
+        </div>
       </v-col>
+      <saying-list :sayings="sayings" />
     </v-row>
   </amplify-authenticator>
 </template>
 
 <script>
 import { API, Auth } from 'aws-amplify'
+import FailureList from '@/components/myPage/FailureList'
+import SayingList from '@/components/myPage/SayingList'
 import { listFailures, listSayings } from '~/graphql/custumQueries'
-import VFailure from '~/components/myPage/Failure.vue'
 import VProfile from '~/components/myPage/Profile.vue'
-import VSaying from '~/components/myPage/Saying.vue'
 
 export default {
   components: {
-    VFailure,
-    VProfile,
-    VSaying
+    FailureList,
+    SayingList,
+    VProfile
   },
   data () {
     return {
@@ -61,7 +53,14 @@ export default {
   methods: {
     async getFailures () {
       const failures = await API.graphql({
-        query: listFailures
+        query: listFailures,
+        variables: {
+          filter: {
+            owner: {
+              eq: this.username
+            }
+          }
+        }
       })
       this.failures = failures.data.listFailures.items
     },

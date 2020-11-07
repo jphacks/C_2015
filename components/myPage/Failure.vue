@@ -8,7 +8,7 @@
       <v-card-text>
         名言が<span>{{ sayingsCount }}</span>コ送られました！
       </v-card-text>
-      <v-btn @click="showSaying">名言一覧</v-btn>
+      <v-btn @click="showSayings">名言一覧</v-btn>
       <v-btn @click="createSaying">名言を送る</v-btn>
     </v-card-actions>
   </v-card>
@@ -31,6 +31,12 @@ export default {
     this.countSaying()
   },
   methods: {
+    showSayings () {
+      this.$emit('showSayings', this.failure)
+    },
+    createSaying () {
+      this.$emit('showSendSaying', this.failure)
+    },
     countSaying () {
       const sayings = this.failure.sayings.items
       let count = 0
@@ -62,5 +68,11 @@ export default {
 }
 .actions{
   margin-left: 20%;
+}
+.v-btn{
+  box-shadow: none;
+  background-color: #9D1D22 !important;
+  color: white;
+  border-radius: 0;
 }
 </style>
