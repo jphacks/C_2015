@@ -14,14 +14,16 @@
     <v-dialog
       v-model="showSayingsDialog"
     >
-      <v-card>
-        <v-card-title>
-          「{{ targetFailure.title }}」に送られた名言
-        </v-card-title>
-        <v-card-text>
-          {{ targetFailure.content }}
-        </v-card-text>
-        {{ targetFailure }}
+      <v-card class="modal-sayings">
+        <div>
+           <v-card-title>
+            「{{ targetFailure.title }}」に送られた名言
+          </v-card-title>
+          <v-card-text>
+            <span>{{ targetFailure.content }}</span>におくる...
+          </v-card-text>
+          {{ targetFailure }}
+        </div>
       </v-card>
     </v-dialog>
     <v-dialog
@@ -111,3 +113,17 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.modal-sayings{
+  padding: 1rem;
+  background-color: #f4dca5;
+}
+.modal-sayings div{
+  padding: .5rem;
+  background-color: #fff;
+}
+.modal-sayings .v-card__text span{
+  color: #9D1D22;
+}
+</style>
