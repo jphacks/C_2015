@@ -29,31 +29,32 @@
     <v-dialog
       v-model="showSendSayingDialog"
     >
-      <v-card>
-        <v-card-title>
-          「{{ targetFailure.title }}」へ名言を送ろう
-        </v-card-title>
-        <v-card-text>
-          {{ targetFailure.content }}
-        </v-card-text>
-        <v-card-actions>
-          <v-text-field
-            v-model="createdSaying"
-            label="名言"
-            :rules="[rulesCreateSaying.required]"
-            placeholder="大学生よ単位を抱け"
-          >
-            本文
-          </v-text-field>
-        </v-card-actions>
-        <v-card-actions>
-          <v-btn
-            @click="createSaying"
-          >
-            名言を送る
-          </v-btn>
-        </v-card-actions>
-        {{ targetFailure }}
+      <v-card  class="modal-send">
+        <div>
+          <v-card-title>
+            「{{ targetFailure.title }}」へ名言を送ろう
+          </v-card-title>
+          <v-card-text>
+            失敗談：{{ targetFailure.content }}
+          </v-card-text>
+          <v-card-actions>
+            <v-text-field
+              v-model="createdSaying"
+              label="名言"
+              :rules="[rulesCreateSaying.required]"
+              placeholder="大学生よ単位を抱け"
+            >
+              本文
+            </v-text-field>
+          </v-card-actions>
+          <v-card-actions>
+            <v-btn
+              @click="createSaying"
+            >
+              名言を送る
+            </v-btn>
+          </v-card-actions>
+        </div>
       </v-card>
     </v-dialog>
   </v-row>
@@ -124,6 +125,24 @@ export default {
   background-color: #fff;
 }
 .modal-sayings .v-card__text span{
+  color: #9D1D22;
+}
+
+.modal-send{
+  padding: 1rem;
+  background-color: #f4dca5;
+}
+.modal-send .v-btn{
+  box-shadow: none;
+  background-color: #9D1D22 !important;
+  color: white;
+  border-radius: 0;
+}
+.modal-send div{
+  padding: .5rem;
+  background-color: #fff;
+}
+.modal-send .v-card__text span{
   color: #9D1D22;
 }
 </style>
