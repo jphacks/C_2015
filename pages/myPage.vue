@@ -53,7 +53,14 @@ export default {
   methods: {
     async getFailures () {
       const failures = await API.graphql({
-        query: listFailures
+        query: listFailures,
+        variables: {
+          filter: {
+            owner: {
+              eq: this.username
+            }
+          }
+        }
       })
       this.failures = failures.data.listFailures.items
     },
