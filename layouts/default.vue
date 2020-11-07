@@ -31,8 +31,8 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-img
         max-height="55px"
-        max-width="55px"
-        src="アイコン.png"
+        max-width="200px"
+        src="logo.png"
       ></v-img>
       <v-spacer />
       <v-autocomplete />

@@ -4,6 +4,10 @@
       <v-col cols="2">
         <div class="username">
           <span>{{ failure.owner }}</span>
+          <v-img
+        max-width="70px"
+        max-height="70px"
+        src="books.png"></v-img>
         </div>
       </v-col>
       <v-col cols="10">
@@ -89,5 +93,11 @@ export default {
   transform: translate(-50%,-50%);
   background-color: #fff;
   padding: .5rem 20%;
+}
+.v-btn{
+  box-shadow: none;
+  background-color: #9D1D22 !important;
+  color: white;
+  border-radius: 0;
 }
 </style>
