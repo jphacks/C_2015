@@ -11,68 +11,49 @@ export const createFailure = /* GraphQL */ `
       title
       content
       owner
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       sayings {
         items {
           id
           content
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       metoos {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       sorrys {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       nices {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -86,68 +67,49 @@ export const updateFailure = /* GraphQL */ `
       title
       content
       owner
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       sayings {
         items {
           id
           content
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       metoos {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       sorrys {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       nices {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -161,68 +123,49 @@ export const deleteFailure = /* GraphQL */ `
       title
       content
       owner
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       sayings {
         items {
           id
           content
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       metoos {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       sorrys {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
       nices {
         items {
           id
           owner
           failureID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -236,52 +179,38 @@ export const createSaying = /* GraphQL */ `
       content
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
       likes {
         items {
           id
           owner
           sayingID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -295,52 +224,38 @@ export const updateSaying = /* GraphQL */ `
       content
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
       likes {
         items {
           id
           owner
           sayingID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -354,52 +269,38 @@ export const deleteSaying = /* GraphQL */ `
       content
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
       likes {
         items {
           id
           owner
           sayingID
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         nextToken
-        startedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -412,38 +313,28 @@ export const createMetoo = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -456,38 +347,28 @@ export const updateMetoo = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -500,38 +381,28 @@ export const deleteMetoo = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -544,38 +415,28 @@ export const createSorry = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -588,38 +449,28 @@ export const updateSorry = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -632,38 +483,28 @@ export const deleteSorry = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -676,38 +517,28 @@ export const createNice = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -720,38 +551,28 @@ export const updateNice = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -764,38 +585,28 @@ export const deleteNice = /* GraphQL */ `
       id
       owner
       failureID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       failure {
         id
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         sayings {
           nextToken
-          startedAt
         }
         metoos {
           nextToken
-          startedAt
         }
         sorrys {
           nextToken
-          startedAt
         }
         nices {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -808,37 +619,27 @@ export const createLike = /* GraphQL */ `
       id
       owner
       sayingID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       saying {
         id
         content
         owner
         failureID
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         failure {
           id
           title
           content
           owner
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         likes {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -851,37 +652,27 @@ export const updateLike = /* GraphQL */ `
       id
       owner
       sayingID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       saying {
         id
         content
         owner
         failureID
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         failure {
           id
           title
           content
           owner
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         likes {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -894,37 +685,27 @@ export const deleteLike = /* GraphQL */ `
       id
       owner
       sayingID
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
       saying {
         id
         content
         owner
         failureID
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
         failure {
           id
           title
           content
           owner
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         likes {
           nextToken
-          startedAt
         }
+        createdAt
+        updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -937,9 +718,6 @@ export const createOnesingle = /* GraphQL */ `
       id
       owner
       onesignalId
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -954,9 +732,6 @@ export const updateOnesingle = /* GraphQL */ `
       id
       owner
       onesignalId
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -971,9 +746,6 @@ export const deleteOnesingle = /* GraphQL */ `
       id
       owner
       onesignalId
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }

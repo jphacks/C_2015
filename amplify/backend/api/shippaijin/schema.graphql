@@ -1,8 +1,10 @@
-type Failure @model @searchable
-  @auth(
+type Failure
+  @model
+  @searchable
+  @auth (
     rules: [
-      { allow: owner }
-      { allow: public, operations: [read] }
+      { allow: owner },
+      { allow: private, operations: [read] }
     ]
   )
 {
@@ -10,85 +12,87 @@ type Failure @model @searchable
   title: String!
   content: String!
   owner: String
-  sayings: [Saying] @connection(keyName: "byFailure", fields: ["id"])
-  metoos: [Metoo] @connection(keyName: "byFailure", fields: ["id"])
-  sorrys: [Sorry] @connection(keyName: "byFailure", fields: ["id"])
-  nices: [Nice] @connection(keyName: "byFailure", fields: ["id"])
+  sayings: [Saying] @connection(fields: ["id"])
+  metoos: [Metoo] @connection(fields: ["id"])
+  sorrys: [Sorry] @connection(fields: ["id"])
+  nices: [Nice] @connection(fields: ["id"])
 }
-type Saying @model @searchable
-  @auth(
+type Saying
+  @model
+  @searchable
+  @auth (
     rules: [
-      { allow: owner }
-      { allow: public, operations: [read] }
+      { allow: owner },
+      { allow: private, operations: [read] }
     ]
   )
-  @key(name: "byFailure", fields: ["failureID", "content"], queryField: "byFailure")
 {
   id: ID!
   content: String!
   owner: String
   failureID: ID!
   failure: Failure @connection(fields: ["failureID"])
-  likes: [Like] @connection(keyName: "bySaying", fields: ["id"])
+  likes: [Like] @connection(fields: ["id"])
 }
-type Metoo @model
-  @auth(
+type Metoo
+  @model
+  @auth (
     rules: [
-      { allow: owner }
-      { allow: public, operations: [read] }
+      { allow: owner },
+      { allow: private, operations: [read] }
     ]
   )
-  @key(name: "byFailure", fields: ["failureID"], queryField: "byFailure")
 {
   id: ID!
   owner: String
   failureID: ID!
   failure: Failure @connection(fields: ["failureID"])
 }
-type Sorry @model
-  @auth(
+type Sorry
+  @model
+  @auth (
     rules: [
-      { allow: owner }
-      { allow: public, operations: [read] }
+      { allow: owner },
+      { allow: private, operations: [read] }
     ]
   )
-  @key(name: "byFailure", fields: ["failureID"], queryField: "byFailure")
 {
   id: ID!
   owner: String
   failureID: ID!
   failure: Failure @connection(fields: ["failureID"])
 }
-type Nice @model
-  @auth(
+type Nice
+  @model
+  @auth (
     rules: [
-      { allow: owner }
-      { allow: public, operations: [read] }
+      { allow: owner },
+      { allow: private, operations: [read] }
     ]
   )
-  @key(name: "byFailure", fields: ["failureID"], queryField: "byFailure")
 {
   id: ID!
   owner: String
   failureID: ID!
   failure: Failure @connection(fields: ["failureID"])
 }
-type Like @model
-  @auth(
+type Like
+  @model
+  @auth (
     rules: [
-      { allow: owner }
-      { allow: public, operations: [read] }
+      { allow: owner },
+      { allow: private, operations: [read] }
     ]
   )
-  @key(name: "bySaying", fields: ["sayingID"], queryField: "bySaying")
 {
   id: ID!
   owner: String
   sayingID: ID!
   saying: Saying @connection(fields: ["sayingID"])
 }
-type Onesingle @model
-  @auth(
+type Onesingle
+  @model
+  @auth (
     rules: [
       { allow: owner }
     ]

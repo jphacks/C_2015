@@ -1,10 +1,17 @@
 {
   "auth": {
-    "shippaijin11a9f532": {
+    "shippaijin04da37a1": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual"
     }
   },
   "api": {
@@ -16,7 +23,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authshippaijin11a9f532"
+              "userPoolId": "authshippaijin04da37a1"
             }
           },
           "additionalAuthenticationProviders": [
@@ -24,7 +31,7 @@
               "authenticationType": "API_KEY",
               "apiKeyConfig": {
                 "apiKeyExpirationDays": 365,
-                "description": "this is generated on uh"
+                "description": "for public"
               }
             }
           ]
@@ -32,15 +39,8 @@
       }
     }
   },
-  "hosting": {
-    "amplifyhosting": {
-      "service": "amplifyhosting",
-      "providerPlugin": "awscloudformation",
-      "type": "manual"
-    }
-  },
   "function": {
-    "shippaijin6d2d021d": {
+    "shippaijinaftermade": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
@@ -50,7 +50,8 @@
           "resourceName": "shippaijin",
           "attributes": [
             "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput"
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
           ]
         }
       ]

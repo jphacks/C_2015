@@ -10,9 +10,6 @@ export const listFailures = /* GraphQL */ `
         title
         content
         owner
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         sayings {
@@ -21,60 +18,43 @@ export const listFailures = /* GraphQL */ `
             content
             owner
             failureID
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
-          startedAt
         }
         metoos {
           items {
             id
             owner
             failureID
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
-          startedAt
         }
         sorrys {
           items {
             id
             owner
             failureID
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
-          startedAt
         }
         nices {
           items {
             id
             owner
             failureID
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
-          startedAt
         }
       }
       nextToken
-      startedAt
     }
   }
 `
@@ -90,9 +70,6 @@ export const listSayings = /* GraphQL */ `
         content
         owner
         failureID
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
         failure {
@@ -100,19 +77,21 @@ export const listSayings = /* GraphQL */ `
           title
           content
           owner
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
         likes {
+          items {
+            id
+            owner
+            sayingID
+            createdAt
+            updatedAt
+          }
           nextToken
-          startedAt
         }
       }
       nextToken
-      startedAt
     }
   }
 `

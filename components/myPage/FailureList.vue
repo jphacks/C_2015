@@ -3,7 +3,7 @@
     <v-col
       v-for="failure in failures"
       :key="failure.id"
-      cols="12"
+      cols="10"
     >
       <FailureCard
         :failure="failure"
@@ -39,7 +39,7 @@
             v-model="createdSaying"
             label="名言"
             :rules="[rulesCreateSaying.required]"
-            placeholder="大学生よ単位を抱け"
+            placeholder="ここのテキスト募集"
           >
             本文
           </v-text-field>
@@ -59,7 +59,7 @@
 
 <script>
 import { API } from 'aws-amplify'
-import FailureCard from '@/components/failure/FailureCard'
+import FailureCard from '@/components/myPage/Failure'
 import { createSaying } from '~/graphql/mutations'
 
 export default {
