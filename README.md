@@ -62,6 +62,7 @@
 
 #### フレームワーク・ライブラリ・モジュール
 * Amplify
+
 API
 Authentication
 UIフレームワーク
@@ -70,12 +71,12 @@ UIフレームワーク
 @nuxtjs/pwa
 @nuxtjs/onesignal
 *Vuetify
+
 メンバーがVuetifyに親しいため利用しましたが、マテリアルデザインではありません。
-*
+
 
 #### デバイス
 * Web
-* 
 
 ### 独自技術
 #### ハッカソンで開発した独自機能・技術
