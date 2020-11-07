@@ -2,12 +2,21 @@
   <v-card>
     <v-row>
       <v-col cols="2">
-        <div class="username">
-          <span>{{ failure.owner }}</span>
-          <v-img
-        max-width="70px"
-        max-height="70px"
-        src="books.png"></v-img>
+        <div class="username row">
+          <v-row>
+            <v-col cols="12">
+              <p>
+                {{ failure.owner }}<br>
+                さんの失敗談
+              </p>
+            </v-col>
+            <v-col cols="12">
+              <v-img
+              max-width="70px"
+              max-height="70px"
+              src="books.png"></v-img>
+            </v-col>
+          </v-row>
         </div>
       </v-col>
       <v-col cols="10">
@@ -117,15 +126,11 @@ export default {
 }
 .username{
   height: 100%;
-  position: relative;
+  padding: 1rem;
 }
-.username span{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+.username p{
+  padding: 1rem;
   background-color: #fff;
-  padding: .5rem 20%;
 }
 .v-btn{
   box-shadow: none;
