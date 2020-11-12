@@ -1,6 +1,6 @@
-# サンプル（プロダクト名）
+# しっぱ偉人
 
-[![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2020/09/JPHACKS2020_ogp.jpg)](https://www.youtube.com/watch?v=G5rULR53uMk)
+[![IMAGE ALT TEXT HERE](https://www.shippaijin.work/icon.png)](https://youtu.be/e7SgCPaQV6g)
 
 ## 製品概要
 ### 背景(製品開発のきっかけ、課題等）
